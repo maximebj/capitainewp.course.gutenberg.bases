@@ -3,7 +3,7 @@ import { useBlockProps } from '@wordpress/block-editor'
 
 import './editor.scss'
 
-export default function Edit(props) {
+export default function Edit( props ) {
 	const blockProps = useBlockProps();
 
 	// La fonction qui met à jour la valeur
@@ -12,7 +12,7 @@ export default function Edit(props) {
 	}
 
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			{ props.isSelected ? ( // N'afficher le champ seulement si le bloc est actif
 				<input
 					type='text'

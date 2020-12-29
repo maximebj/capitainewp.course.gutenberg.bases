@@ -9,7 +9,7 @@ import myIcon from './custom-icon.js' // On stocke l'icône dans un fichier à p
 
 registerBlockType( 'capitainewp/icon', {
 	apiVersion: 2,
-	title: __( 'Block with icon', 'capitainewp-gut-bases' ),
+	title: __( '2. Block with custom icon', 'capitainewp-gut-bases' ),
 	description: __(
 		'A block with a custom SVG icon',
 		'capitainewp-gut-bases'

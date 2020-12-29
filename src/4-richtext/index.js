@@ -6,21 +6,20 @@ import './style.scss'
 import Edit from './edit'
 import save from './save'
 
-registerBlockType( 'capitainewp/edit', {
+registerBlockType( 'capitainewp/richtext', {
 	apiVersion: 2,
-	title: __( '3. Editable block', 'capitainewp-gut-bases' ),
+	title: __( '4. Richtext', 'capitainewp-gut-bases' ),
 	description: __(
-		'Editable block.',
+		'Editable block with RichText component.',
 		'capitainewp-gut-bases'
 	),
 	category: 'common',
 	icon: 'edit',
 
-	// C'est ici que l'on défini les champs dynamiques
 	attributes: {
 		content: {
 			type: 'string',
-			source: 'text',
+			source: 'html', // On récupère du HTML et pas que du texte
 			selector: '.content'
 		},
 	},

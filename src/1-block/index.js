@@ -8,7 +8,7 @@ import save from './save'
 
 registerBlockType( 'capitainewp/premier', {
 	apiVersion: 2,
-	title: __( 'First Gutenberg block', 'capitainewp-gut-bases' ),
+	title: __( '1. First Gutenberg block', 'capitainewp-gut-bases' ),
 	description: __(
 		'My first Gutenberg block.',
 		'capitainewp-gut-bases'
