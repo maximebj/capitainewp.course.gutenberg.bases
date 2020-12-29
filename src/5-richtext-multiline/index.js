@@ -8,7 +8,7 @@ import save from './save'
 
 registerBlockType( 'capitainewp/richtext-multiline', {
 	apiVersion: 2,
-	title: __( '5. RichText & multiline', 'capitainewp-gut-bases' ),
+	title: __( '5. RichText & Multiline', 'capitainewp-gut-bases' ),
 	description: __(
 		'Editable block with RichText and Multiline support.',
 		'capitainewp-gut-bases'
