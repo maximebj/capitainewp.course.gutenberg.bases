@@ -1,12 +1,12 @@
-import { registerBlockType } from '@wordpress/blocks';
-import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks'
+import { __ } from '@wordpress/i18n'
 
-import './style.scss';
+import './style.scss'
 
-import Edit from './edit';
-import save from './save';
+import Edit from './edit'
+import save from './save'
 
-registerBlockType( 'create-block/capitainewp-gut-bases', {
+registerBlockType( 'capitainewp/premier', {
 	apiVersion: 2,
 	title: __( 'First Gutenberg block', 'capitainewp-gut-bases' ),
 	description: __(
@@ -21,4 +21,4 @@ registerBlockType( 'create-block/capitainewp-gut-bases', {
 	},
 	edit: Edit,
 	save,
-} );
+} )

@@ -9,6 +9,17 @@
 
 // extracted by mini-css-extract-plugin
 
+/***/ }),
+
+/***/ "./src/2-icon/style.scss":
+/*!*******************************!*\
+  !*** ./src/2-icon/style.scss ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
 /***/ })
 
 }]);
@@ -190,6 +201,134 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
 
 
+
+
+function Edit() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Capitainewp Gut Bases – hello from the editor!', 'capitainewp-gut-bases'));
+}
+
+/***/ }),
+
+/***/ "./src/1-block/editor.scss":
+/*!*********************************!*\
+  !*** ./src/1-block/editor.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/1-block/index.js":
+/*!******************************!*\
+  !*** ./src/1-block/index.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/1-block/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/1-block/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/1-block/save.js");
+
+
+
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('capitainewp/premier', {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('First Gutenberg block', 'capitainewp-gut-bases'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('My first Gutenberg block.', 'capitainewp-gut-bases'),
+  category: 'widgets',
+  icon: 'awards',
+  keywords: [Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('premier bloc', 'capitainewp-gut-bases')],
+  supports: {
+    html: false
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/1-block/save.js":
+/*!*****************************!*\
+  !*** ./src/1-block/save.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function save() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Capitainewp Gut Bases – hello from the saved content!', 'capitainewp-gut-bases'));
+}
+
+/***/ }),
+
+/***/ "./src/2-icon/custom-icon.js":
+/*!***********************************!*\
+  !*** ./src/2-icon/custom-icon.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var myIcon = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+  width: "20px",
+  height: "20px",
+  viewBox: "0 0 100 125"
+}, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+  d: "M5.8,51.3h88.4c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3H5.8c-1.8,0-3.3,1.5-3.3,3.3C2.5,49.8,4,51.3,5.8,51.3z"
+}), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+  d: "M94.2,54.7H72.3l-6.4,5.9c-1.7,1.6-4.2,2.1-6.4,1.2l-17.9-7.1H5.8c-1.8,0-3.3,1.5-3.3,3.3v4.3c0,1.8,1.5,3.3,3.3,3.3 h88.4c1.8,0,3.3-1.5,3.3-3.3V58C97.5,56.2,96,54.7,94.2,54.7z"
+}), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+  d: "M94.2,69H5.8c-1.8,0-3.3,1.5-3.3,3.3c0,8.6,7,15.7,15.7,15.7h63.7c8.6,0,15.7-7,15.7-15.7C97.5,70.5,96,69,94.2,69z"
+}), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+  d: "M6.2,41.3h87.6c2,0,3.4-2.2,2.8-4.3C94,28.9,84.6,12.1,50,12.1S6,28.9,3.4,37C2.8,39.1,4.2,41.3,6.2,41.3z M81.4,29.9 c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7S79.9,29.9,81.4,29.9z M69.7,20.2c1.5,0,2.7,1.2,2.7,2.7 c0,1.5-1.2,2.7-2.7,2.7S67,24.3,67,22.9C67,21.4,68.2,20.2,69.7,20.2z M62.2,30.1c1.5,0,2.7,1.2,2.7,2.7c0,1.5-1.2,2.7-2.7,2.7 s-2.7-1.2-2.7-2.7C59.5,31.3,60.7,30.1,62.2,30.1z M50.8,19.1c1.5,0,2.7,1.2,2.7,2.7c0,1.5-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7 C48.1,20.3,49.3,19.1,50.8,19.1z M42.1,30.1c1.5,0,2.7,1.2,2.7,2.7c0,1.5-1.2,2.7-2.7,2.7c-1.5,0-2.7-1.2-2.7-2.7 C39.4,31.3,40.6,30.1,42.1,30.1z M31,21.2c1.5,0,2.7,1.2,2.7,2.7c0,1.5-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7 C28.4,22.4,29.6,21.2,31,21.2z M19.1,30.7c1.5,0,2.7,1.2,2.7,2.7S20.6,36,19.1,36s-2.7-1.2-2.7-2.7S17.6,30.7,19.1,30.7z"
+}));
+/* harmony default export */ __webpack_exports__["default"] = (myIcon);
+
+/***/ }),
+
+/***/ "./src/2-icon/edit.js":
+/*!****************************!*\
+  !*** ./src/2-icon/edit.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/2-icon/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
 /**
  * Retrieves the translation of text.
  *
@@ -227,10 +366,10 @@ function Edit() {
 
 /***/ }),
 
-/***/ "./src/1-block/editor.scss":
-/*!*********************************!*\
-  !*** ./src/1-block/editor.scss ***!
-  \*********************************/
+/***/ "./src/2-icon/editor.scss":
+/*!********************************!*\
+  !*** ./src/2-icon/editor.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -238,10 +377,10 @@ function Edit() {
 
 /***/ }),
 
-/***/ "./src/1-block/index.js":
-/*!******************************!*\
-  !*** ./src/1-block/index.js ***!
-  \******************************/
+/***/ "./src/2-icon/index.js":
+/*!*****************************!*\
+  !*** ./src/2-icon/index.js ***!
+  \*****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -251,22 +390,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./src/1-block/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/1-block/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/1-block/save.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/2-icon/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/2-icon/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/2-icon/save.js");
+/* harmony import */ var _custom_icon_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./custom-icon.js */ "./src/2-icon/custom-icon.js");
 
 
 
 
 
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('create-block/capitainewp-gut-bases', {
+ // On stocke l'icône dans un fichier à part
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('capitainewp/icon', {
   apiVersion: 2,
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('First Gutenberg block', 'capitainewp-gut-bases'),
-  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('My first Gutenberg block.', 'capitainewp-gut-bases'),
-  category: 'widgets',
-  icon: 'awards',
-  keywords: [Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('premier bloc', 'capitainewp-gut-bases')],
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Block with icon', 'capitainewp-gut-bases'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('A block with a custom SVG icon', 'capitainewp-gut-bases'),
+  category: 'common',
+  icon: _custom_icon_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+  keywords: [Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('icône', 'capitainewp-gut-bases')],
   supports: {
     html: false
   },
@@ -276,10 +418,10 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
 
 /***/ }),
 
-/***/ "./src/1-block/save.js":
-/*!*****************************!*\
-  !*** ./src/1-block/save.js ***!
-  \*****************************/
+/***/ "./src/2-icon/save.js":
+/*!****************************!*\
+  !*** ./src/2-icon/save.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -324,6 +466,8 @@ function save() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _1_block__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./1-block */ "./src/1-block/index.js");
+/* harmony import */ var _2_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./2-icon */ "./src/2-icon/index.js");
+
 
 
 /***/ }),
