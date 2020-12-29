@@ -17,10 +17,10 @@ registerBlockType( 'capitainewp/richtext-toolbar', {
 	icon: 'edit',
 
 	// Alignement du bloc, et non pas du contenu
-	// supports: {
-	// 	align: true, // On permet de jouer avec l'alignement
-	// 	align: ['left', 'right', 'center'], // Ou on choisit les alignements autorisés
-	// },
+	supports: {
+		align: true, // On permet de jouer avec l'alignement
+		align: ['left', 'right', 'center'], // Ou on choisit les alignements autorisés
+	},
 
 	attributes: {
 		content: {

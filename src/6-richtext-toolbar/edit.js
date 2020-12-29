@@ -15,7 +15,7 @@ export default function Edit( props ) {
 				value={ props.attributes.content }
 				className="content"
 				onChange={ content => props.setAttributes( { content } ) }
-				formattingControls={ [ 'bold', 'italic', 'link' ] }
+				allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
 			/>
 		</div>
 	)
