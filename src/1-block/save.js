@@ -8,5 +8,5 @@ export default function save() {
 				'capitainewp-gut-bases'
 			) }
 		</p>
-	);
+	)
 }

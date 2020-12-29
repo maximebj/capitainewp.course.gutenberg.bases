@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///editor.scss"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB,C;AAFA;EACE,uBAAuB;AACzB,C","file":"index.css","sourcesContent":[".wp-block-capitainewp-icon {\n  border: 1px dotted #f00;\n}"],"sourceRoot":""}
+{"version":3,"sources":["webpack:///editor.scss"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB,C;AAFA;EACE,uBAAuB;AACzB,C;AAFA;EACE,cAAc;AAChB,C","file":"index.css","sourcesContent":[".wp-block-capitainewp-edit input {\n  margin: 28px 0;\n}"],"sourceRoot":""}

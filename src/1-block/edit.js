@@ -11,5 +11,5 @@ export default function Edit() {
 				'capitainewp-gut-bases'
 			) }
 		</p>
-	);
+	)
 }

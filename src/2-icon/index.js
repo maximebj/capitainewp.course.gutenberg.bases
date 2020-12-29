@@ -16,10 +16,6 @@ registerBlockType( 'capitainewp/icon', {
 	),
 	category: 'common',
 	icon: myIcon,
-  keywords: [ __( 'icône', 'capitainewp-gut-bases' ) ],
-	supports: {
-		html: false,
-	},
 	edit: Edit,
 	save,
 } )
