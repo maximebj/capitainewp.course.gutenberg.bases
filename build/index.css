@@ -18,5 +18,16 @@
   margin: 0;
   padding: 0;
 }
+.capitaine-toolbar-green {
+  color: #83BD71;
+}
+
+.capitaine-toolbar-yellow {
+  color: #FFC334;
+}
+
+.capitaine-toolbar-red {
+  color: #FF2952;
+}
 
 /*# sourceMappingURL=index.css.map*/

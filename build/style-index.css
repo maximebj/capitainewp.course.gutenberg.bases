@@ -38,5 +38,26 @@
   margin: 0;
   padding: 0;
 }
+.wp-block-capitainewp-alert {
+  padding: 15px;
+  border-left: 5px solid;
+  border-radius: 4px;
+  color: white;
+}
+.wp-block-capitainewp-alert p:last-child {
+  margin-bottom: 0;
+}
+.wp-block-capitainewp-alert.is-advice {
+  background: #83BD71;
+  border-color: #51893f;
+}
+.wp-block-capitainewp-alert.is-warning {
+  background: #FFC334;
+  border-color: #cd9000;
+}
+.wp-block-capitainewp-alert.is-avoid {
+  background: #FF2952;
+  border-color: #c20025;
+}
 
 /*# sourceMappingURL=style-index.css.map*/
