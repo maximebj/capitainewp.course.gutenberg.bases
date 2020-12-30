@@ -1,0 +1,14 @@
+.capitaine-image-wrapper {
+	position: relative;
+}
+
+.capitaine-remove-image {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: white;
+
+	&:hover {
+		background: white;
+	}
+}

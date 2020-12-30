@@ -29,8 +29,19 @@
 .capitaine-toolbar-red {
   color: #FF2952;
 }
-.wp-block-capitainewp-premier {
-  border: 1px dotted #f00;
+
+.capitaine-image-wrapper {
+  position: relative;
+}
+
+.capitaine-remove-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+.capitaine-remove-image:hover {
+  background: white;
 }
 
 /*# sourceMappingURL=index.css.map*/

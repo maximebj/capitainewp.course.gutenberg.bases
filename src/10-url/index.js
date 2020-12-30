@@ -8,7 +8,7 @@ import save from './save'
 
 registerBlockType( 'capitainewp/url', {
 	apiVersion: 2,
-	title: __( '10. URL block', 'capitainewp-gut-bases' ),
+	title: __( '10. URL', 'capitainewp-gut-bases' ),
 	description: __(
 		'A block with an URL input component.',
 		'capitainewp-gut-bases'
