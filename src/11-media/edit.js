@@ -43,7 +43,8 @@ export default function Edit( props ) {
 								instructions={ __( 'Select a picture', 'capitainewp-gut-bases' ) }
 							>
 								<Button
-									className="components-icon-button wp-block-image__upload-button button button-large"
+									isSecondary
+									isLarge
 									onClick={ open }
 									icon="upload"
 								>

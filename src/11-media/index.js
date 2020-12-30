@@ -17,17 +17,17 @@ registerBlockType( 'capitainewp/media', {
 	icon: 'camera',
 
 	attributes: {
-		pictureID: {
+		pictureID: { // L'identifiant de l'image
 			type: 'number',
 			default: null,
 		},
-		pictureURL: {
+		pictureURL: { // L'URL de l'image
 			type: 'string',
 			source: 'attribute',
 			attribute: 'src',
 			selector: 'img',
 		},
-		pictureAlt: {
+		pictureAlt: { // Le texte alternatif de l'image
 			type: 'string',
 			source: 'attribute',
 			attribute: 'alt',

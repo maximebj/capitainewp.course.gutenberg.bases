@@ -603,7 +603,8 @@ function Edit(props) {
         label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Photo', 'capitainewp-gut-bases'),
         instructions: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Select a picture', 'capitainewp-gut-bases')
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-        className: "components-icon-button wp-block-image__upload-button button button-large",
+        isSecondary: true,
+        isLarge: true,
         onClick: open,
         icon: "upload"
       }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Import', 'capitainewp-gut-bases')));
@@ -663,16 +664,19 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cap
   icon: 'camera',
   attributes: {
     pictureID: {
+      // L'identifiant de l'image
       type: 'number',
       default: null
     },
     pictureURL: {
+      // L'URL de l'image
       type: 'string',
       source: 'attribute',
       attribute: 'src',
       selector: 'img'
     },
     pictureAlt: {
+      // Le texte alternatif de l'image
       type: 'string',
       source: 'attribute',
       attribute: 'alt',
