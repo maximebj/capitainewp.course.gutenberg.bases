@@ -29,9 +29,9 @@ export default function Edit( props ) {
 					onChange={ alignment => props.setAttributes( { alignment } ) }
 				/>
 
-				<Toolbar label={ __( 'Styles', 'capitainewp-gut-bases'  ) }>
+				<Toolbar label={ __( 'Styles', 'capitainewp-gut-bases' ) }>
 					<ToolbarGroup>
-						<Tooltip text={ __( 'Advice', 'capitainewp-gut-bases'  )  }>
+						<Tooltip text={ __( 'Advice', 'capitainewp-gut-bases' )  }>
 							<ToolbarButton
 								icon="thumbs-up"
 								className={ [
@@ -41,7 +41,7 @@ export default function Edit( props ) {
 								onClick={ () => props.setAttributes( { type: 'advice' } ) }
 							/>
 						</Tooltip>
-						<Tooltip text={ __( 'Warning', 'capitainewp-gut-bases'  )  }>
+						<Tooltip text={ __( 'Warning', 'capitainewp-gut-bases' )  }>
 							<ToolbarButton
 								icon="warning"
 								className={ [
@@ -51,7 +51,7 @@ export default function Edit( props ) {
 								onClick={ () => props.setAttributes( { type: 'warning' } ) }
 							/>
 						</Tooltip>
-						<Tooltip text={ __( 'Avoid', 'capitainewp-gut-bases'  )  }>
+						<Tooltip text={ __( 'Avoid', 'capitainewp-gut-bases' )  }>
 							<ToolbarButton
 								icon="dismiss"
 								className={ [
