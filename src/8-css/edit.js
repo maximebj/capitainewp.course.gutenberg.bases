@@ -4,7 +4,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor'
 import './editor.scss' // On importe la feuille de style pour l'éditeur
 
 export default function Edit( props ) {
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps()
 
 	return (
 

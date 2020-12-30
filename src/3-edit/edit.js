@@ -4,7 +4,7 @@ import { useBlockProps } from '@wordpress/block-editor'
 import './editor.scss'
 
 export default function Edit( props ) {
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps()
 
 	// La fonction qui met à jour la valeur
 	const onChangeContent = event => {

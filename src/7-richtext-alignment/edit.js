@@ -10,7 +10,7 @@ import { Fragment } from '@wordpress/element'
 import './editor.scss'
 
 export default function Edit( props ) {
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps()
 
 	return (
 		<Fragment>
