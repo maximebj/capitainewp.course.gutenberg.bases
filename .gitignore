@@ -26,3 +26,4 @@ node_modules/
 # dotenv environment variables file
 .env
 .DS_Store
+/build
