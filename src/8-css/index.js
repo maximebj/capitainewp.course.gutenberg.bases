@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/css', {
 		'A title block with some good looking CSS.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'admin-appearance',
 
 	attributes: { // 2 attributs ici

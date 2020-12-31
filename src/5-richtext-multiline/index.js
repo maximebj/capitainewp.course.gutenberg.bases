@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/richtext-multiline', {
 		'Editable block with RichText and Multiline support.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'edit',
 
 	attributes: {

@@ -14,7 +14,7 @@ registerBlockType( 'capitainewp/icon', {
 		'A block with a custom SVG icon',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: myIcon,
 	edit: Edit,
 	save,

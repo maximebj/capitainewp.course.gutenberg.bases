@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/inspector', {
 		'A title block with some settings in the Inspector.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'admin-settings',
 
 	attributes: {

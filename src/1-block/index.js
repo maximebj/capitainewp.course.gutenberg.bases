@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/first', {
 		'My first Gutenberg block.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'awards',
   keywords: [ __( 'first block', 'capitainewp-gut-bases' ) ],
 	supports: {

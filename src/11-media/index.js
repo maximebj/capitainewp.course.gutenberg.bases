@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/media', {
 		'A block with a media import component.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'camera',
 
 	attributes: {

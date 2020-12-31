@@ -14,7 +14,7 @@ registerBlockType( 'capitainewp/dynamic', {
 		'This block gets the last 3 posts from the blog.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'wordpress-alt',
 	edit: withSelect( select => { // On contacte l'API et on injecte les résultats dans Edit
 

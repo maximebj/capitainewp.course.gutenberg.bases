@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/edit', {
 		'Editable block.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'edit',
 
 	// C'est ici que l'on défini les champs dynamiques

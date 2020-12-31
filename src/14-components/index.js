@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/components', {
 		'Separate components for a lighter code.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'screenoptions',
 
 	attributes: {

@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/url', {
 		'A block with an URL input component.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'admin-links',
 
 	attributes: {

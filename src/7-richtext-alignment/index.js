@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/richtext-alignment', {
 		'Editable block with RichText and Alignment options.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'edit',
 
 	attributes: {

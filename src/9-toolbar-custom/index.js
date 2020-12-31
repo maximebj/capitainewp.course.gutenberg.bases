@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/alert', {
 		'An alert block with different styles.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'yes-alt',
 
 	attributes: {

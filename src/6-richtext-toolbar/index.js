@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/richtext-toolbar', {
 		'Editable block with RichText and a custom Toolbar.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'edit',
 
 	// Alignement du bloc, et non pas du contenu

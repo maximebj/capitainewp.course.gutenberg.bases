@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/destructuration', {
 		'Props in the code are destructured for an easier reading.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'editor-expand',
 
 	attributes: {

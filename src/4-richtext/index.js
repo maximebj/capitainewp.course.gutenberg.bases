@@ -13,7 +13,7 @@ registerBlockType( 'capitainewp/richtext', {
 		'Editable block with RichText component.',
 		'capitainewp-gut-bases'
 	),
-	category: 'common',
+	category: 'text',
 	icon: 'edit',
 
 	attributes: {
