@@ -1,9 +1,6 @@
 import { __ } from '@wordpress/i18n'
+import { Component } from '@wordpress/element'
 import {
-	useBlockProps,
-	RichText,
-	BlockControls,
-	AlignmentToolbar,
 	InspectorControls,
 	PanelColorSettings,
 } from '@wordpress/block-editor'
@@ -14,26 +11,14 @@ import {
 	ToggleControl,
 	RangeControl,
 } from '@wordpress/components'
-import { Fragment } from '@wordpress/element'
 
-import './editor.scss'
+export default class Settings extends Component {
 
-export default function Edit( props ) {
-	const blockProps = useBlockProps()
+	render() {
 
-	// Déstructuration des props
-	const { attributes: { number, title, chapterSign, alignment, textColor, backgroundColor, withRadius, radius }, setAttributes, className, isSelected } = props
+		const { chapterSign, textColor, backgroundColor, withRadius, radius, setAttributes } = this.props
 
-	return (
-		<Fragment>
-
-			<BlockControls>
-				<AlignmentToolbar
-					value={ alignment }
-					onChange={ alignment => setAttributes( { alignment: alignment } ) }
-				/>
-			</BlockControls>
-
+		return (
 			<InspectorControls>
 				<PanelBody title={ __( 'Chapter sign', 'capitainewp-gut-bases' ) }>
 					<ButtonGroup>
@@ -81,41 +66,9 @@ export default function Edit( props ) {
 							beforeIcon="arrow-down"
 							afterIcon="arrow-up"
 						/>
-					)}
+					) }
 				</PanelBody>
 			</InspectorControls>
-
-			<div { ...blockProps }
-				style={ {
-					borderRadius: withRadius && radius,
-					backgroundColor: backgroundColor,
-					textAlign: alignment,
-				} }
-			>
-				<p
-					className="first-line"
-					style={ {
-						color: textColor
-					} }
-				>
-					<span>{ chapterSign }</span>
-					<RichText
-						tagName="span"
-						placeholder="1"
-						value={ number }
-						className="number"
-						onChange={ number => setAttributes( { number } ) }
-					/>
-				</p>
-				<RichText
-					tagName="h2"
-					placeholder={ __( 'Your title here', 'capitainewp-gut-bases' ) }
-					value={ title }
-					className="title"
-					onChange={ title => setAttributes( { title } ) }
-				/>
-			</div>
-
-		</Fragment>
-	)
+		)
+	}
 }
