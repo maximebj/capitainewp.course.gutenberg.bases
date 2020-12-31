@@ -6,16 +6,16 @@ import './style.scss'
 import Edit from './edit'
 import save from './save'
 
-registerBlockType( 'capitainewp/premier', {
+registerBlockType( 'capitainewp/first', {
 	apiVersion: 2,
 	title: __( '1. First Gutenberg block', 'capitainewp-gut-bases' ),
 	description: __(
 		'My first Gutenberg block.',
 		'capitainewp-gut-bases'
 	),
-	category: 'widgets',
+	category: 'common',
 	icon: 'awards',
-  keywords: [ __( 'premier bloc', 'capitainewp-gut-bases' ) ],
+  keywords: [ __( 'first block', 'capitainewp-gut-bases' ) ],
 	supports: {
 		html: false,
 	},
