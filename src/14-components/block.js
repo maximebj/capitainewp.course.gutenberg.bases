@@ -10,7 +10,7 @@ export default class Block extends Component {
 		return (
 			<div { ...blockProps }
 				style={ {
-					borderRadius: withRadius && radius,
+					borderRadius: withRadius ? radius : null,
 					backgroundColor: backgroundColor,
 					textAlign: alignment,
 				} }

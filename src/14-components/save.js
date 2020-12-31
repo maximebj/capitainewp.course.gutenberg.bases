@@ -9,7 +9,7 @@ export default function save( props ) {
 	return (
 		<div { ...blockProps }
 			style={ {
-				borderRadius: withRadius && radius,
+				borderRadius: withRadius ? radius : null,
 				backgroundColor: backgroundColor,
 				textAlign: alignment,
 			} }

@@ -87,7 +87,7 @@ export default function Edit( props ) {
 
 			<div { ...blockProps }
 				style={ {
-					borderRadius: withRadius && radius,
+					borderRadius: withRadius ? radius : null,
 					backgroundColor: backgroundColor,
 					textAlign: alignment,
 				} }
