@@ -5,16 +5,16 @@ msgstr ""
 "Project-Id-Version: Capitainewp Gut Bases 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/capitainewp-gut-"
 "bases\n"
+"POT-Creation-Date: 2021-01-17T17:24:08+00:00\n"
+"PO-Revision-Date: 2021-01-17 18:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: Français\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-02T09:16:23+00:00\n"
-"PO-Revision-Date: 2021-01-02 11:28+0100\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Domain: capitainewp-gut-bases\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Loco-Version: 2.5.0; wp-5.6\n"
 
@@ -30,263 +30,291 @@ msgstr "Exemples de la formation Gutenberg • Capitaine WP."
 msgid "Maxime BJ"
 msgstr "Maxime BJ"
 
-#: build/index.js:1 src/1-block/index.js:11
-msgid "1. First Gutenberg block"
-msgstr "1. Premier bloc Gutenberg"
-
-#: build/index.js:1 src/1-block/index.js:12
-msgid "My first Gutenberg block."
-msgstr "Mon premier bloc Gutenberg."
-
-#: build/index.js:1 src/1-block/index.js:18
-msgid "first block"
-msgstr "premier bloc"
-
-#: build/index.js:1 src/1-block/edit.js:9 src/2-icon/edit.js:9
-#: src/17-parameters/edit.js:9
+#: build/index.js:606 build/index.js:2429 build/index.js:2583
+#: src/1-block/edit.js:9 src/2-icon/edit.js:9 src/18-parameters/edit.js:9
 msgid "Capitainewp Gut Bases – hello from the editor!"
 msgstr "Capitainewp Gut Bases – bonjour depuis l’éditeur !"
 
-#: build/index.js:1 src/1-block/save.js:6 src/2-icon/save.js:6
-#: src/17-parameters/save.js:6
+#: build/index.js:646 src/1-block/index.js:11
+msgid "1. First Gutenberg block"
+msgstr "1. Premier bloc Gutenberg"
+
+#: build/index.js:647 src/1-block/index.js:12
+msgid "My first Gutenberg block."
+msgstr "Mon premier bloc Gutenberg."
+
+#: build/index.js:650 src/1-block/index.js:18
+msgid "first block"
+msgstr "premier bloc"
+
+#: build/index.js:677 build/index.js:2526 build/index.js:2653
+#: src/1-block/save.js:6 src/2-icon/save.js:6 src/18-parameters/save.js:6
 msgid "Capitainewp Gut Bases – hello from the saved content!"
 msgstr "Capitainewp Gut Bases – bonjour depuis le contenu sauvegardé !"
 
-#: build/index.js:1 src/2-icon/index.js:12
+#: build/index.js:711 src/10-url/edit.js:17
+msgid "Link Label"
+msgstr "Intitulé du lien"
+
+#: build/index.js:728 src/10-url/edit.js:30
+msgid "Edit link"
+msgstr "Modifier le lein"
+
+#: build/index.js:768 src/10-url/index.js:11
+msgid "10. URL"
+msgstr "10. URL"
+
+#: build/index.js:769 src/10-url/index.js:12
+msgid "A block with an URL input component."
+msgstr "Un bloc avec un composant URL."
+
+#: build/index.js:877 src/11-media/edit.js:42
+msgid "Photo"
+msgstr "Photo"
+
+#: build/index.js:878 src/11-media/edit.js:43
+msgid "Select a picture"
+msgstr "Choisissez une image"
+
+#: build/index.js:884 src/11-media/edit.js:51
+msgid "Import"
+msgstr "Importer"
+
+#: build/index.js:895 src/11-media/edit.js:73
+msgid "Remove picture"
+msgstr "Retirer l’image"
+
+#: build/index.js:935 src/11-media/index.js:11
+msgid "11. Media import"
+msgstr "11. Import de média"
+
+#: build/index.js:936 src/11-media/index.js:12
+msgid "A block with a media import component."
+msgstr "Un bloc avec un composant d’import de média."
+
+#: build/index.js:1034 build/index.js:1305 build/index.js:1912
+#: src/12-inspector/edit.js:35 src/13-destructuration/edit.js:38
+#: src/14-components/settings.js:23
+msgid "Chapter sign"
+msgstr "Signe de chapitre"
+
+#: build/index.js:1046 build/index.js:1317 build/index.js:1924
+#: src/12-inspector/edit.js:50 src/13-destructuration/edit.js:53
+#: src/14-components/settings.js:38
+msgid "Colors"
+msgstr "Couleurs"
+
+#: build/index.js:1054 build/index.js:1325 build/index.js:1932
+#: src/12-inspector/edit.js:55 src/13-destructuration/edit.js:58
+#: src/14-components/settings.js:43
+msgid "Title color"
+msgstr "Couleur du titre"
+
+#: build/index.js:1062 build/index.js:1333 build/index.js:1940
+#: src/12-inspector/edit.js:60 src/13-destructuration/edit.js:63
+#: src/14-components/settings.js:48
+msgid "Background color"
+msgstr "Couleur de fond"
+
+#: build/index.js:1065 build/index.js:1336 build/index.js:1943
+#: src/12-inspector/edit.js:65 src/13-destructuration/edit.js:68
+#: src/14-components/settings.js:53
+msgid "Border"
+msgstr "Bordure"
+
+#: build/index.js:1067 build/index.js:1338 build/index.js:1945
+#: src/12-inspector/edit.js:67 src/13-destructuration/edit.js:70
+#: src/14-components/settings.js:55
+msgid "Radius"
+msgstr "Arrondi"
+
+#: build/index.js:1108 build/index.js:1379 build/index.js:1628
+#: build/index.js:2204 build/index.js:3342 src/8-css/edit.js:24
+#: src/12-inspector/edit.js:109 src/13-destructuration/edit.js:112
+#: src/14-components/block.js:35 src/16-innerblocks/edit.js:15
+msgid "Your title here"
+msgstr "Votre titre ici"
+
+#: build/index.js:1156 src/12-inspector/index.js:11
+msgid "12. Inspector"
+msgstr "12. Inspecteur"
+
+#: build/index.js:1157 src/12-inspector/index.js:12
+msgid "A title block with some settings in the Inspector."
+msgstr "Un bloc titre avec des réglages dans l’inspecteur."
+
+#: build/index.js:1427 src/13-destructuration/index.js:11
+msgid "13. Destructuration"
+msgstr "13. Destructuration"
+
+#: build/index.js:1428 src/13-destructuration/index.js:12
+msgid "Props in the code are destructured for an easier reading."
+msgstr "Les props dans le code sont destructurées pour une meilleure lecture."
+
+#: build/index.js:1740 src/14-components/index.js:11
+msgid "14. Components"
+msgstr "14. Composants"
+
+#: build/index.js:1741 src/14-components/index.js:12
+msgid "Separate components for a lighter code."
+msgstr "Séparation des composants pour un code plus léger."
+
+#: build/index.js:2084 src/15-dynamic/edit.js:19
+msgid "Fetching posts"
+msgstr "Récupération des articles"
+
+#: build/index.js:2091 src/15-dynamic/edit.js:30
+msgid "No post found"
+msgstr "Aucune publication trouvée"
+
+#: build/index.js:2143 src/15-dynamic/index.js:12
+msgid "15. Dynamic block"
+msgstr "15. Bloc dynamique"
+
+#: build/index.js:2144 src/15-dynamic/index.js:13
+msgid "This block gets the last 3 posts from the blog."
+msgstr "Ce bloc récupère les 3 derniers articles du blog."
+
+#: build/index.js:2206 src/16-innerblocks/edit.js:16
+msgid "Your content here"
+msgstr "Votre contenu ici"
+
+#: build/index.js:2252 src/16-innerblocks/index.js:11
+msgid "16. Inner Blocks"
+msgstr "16. Bloc imbriqués"
+
+#: build/index.js:2253 src/16-innerblocks/index.js:12
+msgid "Blocks in the block!"
+msgstr "Des blocs dans des blocs !"
+
+#: build/index.js:2356 src/17-hooks/index.js:51
+msgid "Button Size"
+msgstr "Taille du bouton"
+
+#: build/index.js:2358 src/17-hooks/index.js:53
+msgid "Size"
+msgstr "Taille"
+
+#: build/index.js:2361 src/17-hooks/index.js:56
+msgid "Large"
+msgstr "Gros"
+
+#: build/index.js:2364 src/17-hooks/index.js:57
+msgid "Medium"
+msgstr "Moyen"
+
+#: build/index.js:2367 src/17-hooks/index.js:58
+msgid "Small"
+msgstr "Petit"
+
+#: build/index.js:2469 src/18-parameters/index.js:11
+msgid "18. Block settings"
+msgstr "18. Réglages des blocs"
+
+#: build/index.js:2470 src/18-parameters/index.js:12
+msgid "Some other interesting settings for your blocks."
+msgstr "D’autres réglages intéressants pour vos blocs."
+
+#: build/index.js:2473 src/18-parameters/index.js:19
+msgid "first keyword"
+msgstr "premier mot-clé"
+
+#: build/index.js:2473 src/18-parameters/index.js:20
+msgid "second keyword"
+msgstr "deuxième mot-clé"
+
+#: build/index.js:2473 src/18-parameters/index.js:21
+msgid "third keyword"
+msgstr "troisième mot-clé"
+
+#: build/index.js:2626 src/2-icon/index.js:12
 msgid "2. Block with custom icon"
 msgstr "2. Bloc avec une icône personnalisée"
 
-#: build/index.js:1 src/2-icon/index.js:13
+#: build/index.js:2627 src/2-icon/index.js:13
 msgid "A block with a custom SVG icon"
 msgstr "Un bloc avec une icône SVG personnalisée"
 
-#: build/index.js:1 src/3-edit/index.js:11
-msgid "3. Editable block"
-msgstr "3. Bloc éditable"
-
-#: build/index.js:1 src/3-edit/index.js:12
-msgid "Editable block."
-msgstr "Un bloc modifiable."
-
-#: build/index.js:1 src/3-edit/edit.js:21 src/9-toolbar-custom/edit.js:72
+#: build/index.js:2694 build/index.js:3528 src/3-edit/edit.js:21
+#: src/9-toolbar-custom/edit.js:72
 msgid "Write a text!"
 msgstr "Écrivez un texte !"
 
-#: build/index.js:1 src/4-richtext/index.js:11
-msgid "4. Richtext"
-msgstr "4. RichtText"
+#: build/index.js:2737 src/3-edit/index.js:11
+msgid "3. Editable block"
+msgstr "3. Bloc éditable"
 
-#: build/index.js:1 src/4-richtext/index.js:12
-msgid "Editable block with RichText component."
-msgstr "Un bloc modifiable avec un composant RichText."
+#: build/index.js:2738 src/3-edit/index.js:12
+msgid "Editable block."
+msgstr "Un bloc modifiable."
 
-#: build/index.js:1 src/4-richtext/edit.js:18
+#: build/index.js:2816 build/index.js:2935 build/index.js:3059
+#: build/index.js:3197 src/4-richtext/edit.js:18
 #: src/5-richtext-multiline/edit.js:14 src/6-richtext-toolbar/edit.js:14
 #: src/7-richtext-alignment/edit.js:29
 msgid "Write your content here"
 msgstr "Écrivez votre contenu ici"
 
-#: build/index.js:1 src/5-richtext-multiline/index.js:11
+#: build/index.js:2860 src/4-richtext/index.js:11
+msgid "4. Richtext"
+msgstr "4. RichtText"
+
+#: build/index.js:2861 src/4-richtext/index.js:12
+msgid "Editable block with RichText component."
+msgstr "Un bloc modifiable avec un composant RichText."
+
+#: build/index.js:2984 src/5-richtext-multiline/index.js:11
 msgid "5. RichText & Multiline"
 msgstr "5. RichText & Multiline"
 
-#: build/index.js:1 src/5-richtext-multiline/index.js:12
+#: build/index.js:2985 src/5-richtext-multiline/index.js:12
 msgid "Editable block with RichText and Multiline support."
 msgstr "Un bloc modifiable avec un RichtText et un support multiligne."
 
-#: build/index.js:1 src/6-richtext-toolbar/index.js:11
+#: build/index.js:3111 src/6-richtext-toolbar/index.js:11
 msgid "6. RichText & Toolbar"
 msgstr "6. RichText & Toolbar"
 
-#: build/index.js:1 src/6-richtext-toolbar/index.js:12
+#: build/index.js:3112 src/6-richtext-toolbar/index.js:12
 msgid "Editable block with RichText and a custom Toolbar."
 msgstr "Un bloc modifiable avec un RichText et une Toolbar personnalisée."
 
-#: build/index.js:1 src/7-richtext-alignment/index.js:11
+#: build/index.js:3248 src/7-richtext-alignment/index.js:11
 msgid "7. RichText & Alignment"
 msgstr "7. RichText & Alignment"
 
-#: build/index.js:1 src/7-richtext-alignment/index.js:12
+#: build/index.js:3249 src/7-richtext-alignment/index.js:12
 msgid "Editable block with RichText and Alignment options."
 msgstr "Un bloc modifiable avec un RichText et des options d'alignement."
 
-#: build/index.js:1 src/8-css/index.js:11
+#: build/index.js:3391 src/8-css/index.js:11
 msgid "8. CSS"
 msgstr "8. CSS"
 
-#: build/index.js:1 src/8-css/index.js:12
+#: build/index.js:3392 src/8-css/index.js:12
 msgid "A title block with some good looking CSS."
 msgstr "Un bloc élégant avec du CSS."
 
-#: build/index.js:1 src/8-css/edit.js:24 src/12-inspector/edit.js:109
-#: src/13-destructuration/edit.js:112 src/14-components/block.js:35
-#: src/16-innerblocks/edit.js:15
-msgid "Your title here"
-msgstr "Votre titre ici"
-
-#: build/index.js:1 src/9-toolbar-custom/index.js:11
-msgid "9. Alert"
-msgstr "9. Alerte"
-
-#: build/index.js:1 src/9-toolbar-custom/index.js:12
-msgid "An alert block with different styles."
-msgstr "Un bloc d’alerte proposant différents styles."
-
-#: build/index.js:1 src/9-toolbar-custom/edit.js:32
+#: build/index.js:3488 src/9-toolbar-custom/edit.js:32
 msgid "Styles"
 msgstr "Styles"
 
-#: build/index.js:1 src/9-toolbar-custom/edit.js:34
+#: build/index.js:3490 src/9-toolbar-custom/edit.js:34
 msgid "Advice"
 msgstr "Conseil"
 
-#: build/index.js:1 src/9-toolbar-custom/edit.js:44
+#: build/index.js:3502 src/9-toolbar-custom/edit.js:44
 msgid "Warning"
 msgstr "Attention"
 
-#: build/index.js:1 src/9-toolbar-custom/edit.js:54
+#: build/index.js:3514 src/9-toolbar-custom/edit.js:54
 msgid "Avoid"
 msgstr "À éviter"
 
-#: build/index.js:1 src/10-url/index.js:11
-msgid "10. URL"
-msgstr "10. URL"
+#: build/index.js:3579 src/9-toolbar-custom/index.js:11
+msgid "9. Alert"
+msgstr "9. Alerte"
 
-#: build/index.js:1 src/10-url/index.js:12
-msgid "A block with an URL input component."
-msgstr "Un bloc avec un composant URL."
-
-#: build/index.js:1 src/10-url/edit.js:17
-msgid "Link Label"
-msgstr "Intitulé du lien"
-
-#: build/index.js:1 src/10-url/edit.js:30
-msgid "Edit link"
-msgstr "Modifier le lein"
-
-#: build/index.js:1 src/11-media/index.js:11
-msgid "11. Media import"
-msgstr "11. Import de média"
-
-#: build/index.js:1 src/11-media/index.js:12
-msgid "A block with a media import component."
-msgstr "Un bloc avec un composant d’import de média."
-
-#: build/index.js:1 src/11-media/edit.js:73
-msgid "Remove picture"
-msgstr "Retirer l’image"
-
-#: build/index.js:1 src/11-media/edit.js:42
-msgid "Photo"
-msgstr "Photo"
-
-#: build/index.js:1 src/11-media/edit.js:43
-msgid "Select a picture"
-msgstr "Choisissez une image"
-
-#: build/index.js:1 src/11-media/edit.js:51
-msgid "Import"
-msgstr "Importer"
-
-#: build/index.js:1 src/12-inspector/index.js:11
-msgid "12. Inspector"
-msgstr "12. Inspecteur"
-
-#: build/index.js:1 src/12-inspector/index.js:12
-msgid "A title block with some settings in the Inspector."
-msgstr "Un bloc titre avec des réglages dans l’inspecteur."
-
-#: build/index.js:1 src/12-inspector/edit.js:35
-#: src/13-destructuration/edit.js:38 src/14-components/settings.js:23
-msgid "Chapter sign"
-msgstr "Signe de chapitre"
-
-#: build/index.js:1 src/12-inspector/edit.js:50
-#: src/13-destructuration/edit.js:53 src/14-components/settings.js:38
-msgid "Colors"
-msgstr "Couleurs"
-
-#: build/index.js:1 src/12-inspector/edit.js:55
-#: src/13-destructuration/edit.js:58 src/14-components/settings.js:43
-msgid "Title color"
-msgstr "Couleur du titre"
-
-#: build/index.js:1 src/12-inspector/edit.js:60
-#: src/13-destructuration/edit.js:63 src/14-components/settings.js:48
-msgid "Background color"
-msgstr "Couleur de fond"
-
-#: build/index.js:1 src/12-inspector/edit.js:65
-#: src/13-destructuration/edit.js:68 src/14-components/settings.js:53
-msgid "Border"
-msgstr "Bordure"
-
-#: build/index.js:1 src/12-inspector/edit.js:67
-#: src/13-destructuration/edit.js:70 src/14-components/settings.js:55
-msgid "Radius"
-msgstr "Arrondi"
-
-#: build/index.js:1 src/13-destructuration/index.js:11
-msgid "13. Destructuration"
-msgstr "13. Destructuration"
-
-#: build/index.js:1 src/13-destructuration/index.js:12
-msgid "Props in the code are destructured for an easier reading."
-msgstr ""
-"Les props dans le code sont destructurées pour une meilleure lecture."
-
-#: build/index.js:1 src/14-components/index.js:11
-msgid "14. Components"
-msgstr "14. Composants"
-
-#: build/index.js:1 src/14-components/index.js:12
-msgid "Separate components for a lighter code."
-msgstr "Séparation des composants pour un code plus léger."
-
-#: build/index.js:1 src/15-dynamic/index.js:12
-msgid "15. Dynamic block"
-msgstr "15. Bloc dynamique"
-
-#: build/index.js:1 src/15-dynamic/index.js:13
-msgid "This block gets the last 3 posts from the blog."
-msgstr "Ce bloc récupère les 3 derniers articles du blog."
-
-#: build/index.js:1 src/15-dynamic/edit.js:30
-msgid "No post found"
-msgstr "Aucune publication trouvée"
-
-#: build/index.js:1 src/15-dynamic/edit.js:19
-msgid "Fetching posts"
-msgstr "Récupération des articles"
-
-#: build/index.js:1 src/16-innerblocks/index.js:11
-msgid "16. Inner Blocks"
-msgstr "16. Bloc imbriqués"
-
-#: build/index.js:1 src/16-innerblocks/index.js:12
-msgid "Blocks in the block!"
-msgstr "Des blocs dans des blocs !"
-
-#: build/index.js:1 src/16-innerblocks/edit.js:16
-msgid "Your content here"
-msgstr "Votre contenu ici"
-
-#: build/index.js:1 src/17-parameters/index.js:11
-msgid "17. Block settings"
-msgstr "17. Réglages des blocs"
-
-#: build/index.js:1 src/17-parameters/index.js:12
-msgid "Some other interesting settings for your blocks."
-msgstr "D’autres réglages intéressants pour vos blocs."
-
-#: build/index.js:1 src/17-parameters/index.js:19
-msgid "first keyword"
-msgstr "premier mot-clé"
-
-#: build/index.js:1 src/17-parameters/index.js:20
-msgid "second keyword"
-msgstr "deuxième mot-clé"
-
-#: build/index.js:1 src/17-parameters/index.js:21
-msgid "third keyword"
-msgstr "troisième mot-clé"
+#: build/index.js:3580 src/9-toolbar-custom/index.js:12
+msgid "An alert block with different styles."
+msgstr "Un bloc d’alerte proposant différents styles."

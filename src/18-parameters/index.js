@@ -8,7 +8,7 @@ import save from './save'
 
 registerBlockType( 'capitainewp/parameters', {
 	apiVersion: 2,
-	title: __( '17. Block settings', 'capitainewp-gut-bases' ),
+	title: __( '18. Block settings', 'capitainewp-gut-bases' ),
 	description: __(
 		'Some other interesting settings for your blocks.',
 		'capitainewp-gut-bases'
