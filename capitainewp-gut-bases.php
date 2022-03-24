@@ -43,6 +43,7 @@ function capitainewp_gut_bases_block_init()
 	);
 
 	register_block_type( __DIR__ . '/build/16-innerblocks' );
+	register_block_type( __DIR__ . '/build/17-hooks' );
 	register_block_type( __DIR__ . '/build/18-parameters' );
 }
 add_action( 'init', 'capitainewp_gut_bases_block_init' );
