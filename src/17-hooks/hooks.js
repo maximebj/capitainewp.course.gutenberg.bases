@@ -7,34 +7,38 @@ import { PanelBody, SelectControl } from "@wordpress/components";
 
 import './style.scss'
 
+// Blocs qui vont subir la modification du hook
 const allowedBlocks = [ 'capitainewp/hook' ]; // Pourrait être core/button ou core/image par exemple
 
 
-/**
- * Ajout d'un nouvel attribut
- */
-function addAttributes( settings ) {
-  if( typeof settings.attributes !== 'undefined' && allowedBlocks.includes( settings.name ) ){
-    settings.attributes = Object.assign( settings.attributes, {
-      size: {
-        type: 'string',
-        default: 'medium',
-      }
-    });
-  }
-  return settings;
+// 1. Ajout d'un nouvel attribut dans le bloc
+function addAttributes( settings, name ) {
+
+	// Ne rien faire si ce n'est pas notre bloc
+	if ( ! allowedBlocks.includes( name ) ) {
+		return settings;
+	}
+
+	// Ajout de l'attribut et de sa valeur par défaut
+	settings.attributes = Object.assign( settings.attributes, {
+		size: {
+			type: 'string',
+			default: 'medium',
+		}
+	});
+
+	return settings;
 }
 
 
-/**
- * Ajout des champs de paramétrage dans l'inspecteur
- */
-const withAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
+// 2. Ajout des champs de paramétrage dans l'inspecteur
+const addAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
   return ( props ) => {
 
 		const { name, attributes, setAttributes, isSelected } = props;
     const { size } = attributes;
 
+		// Si ce n'est pas le bon bloc, on quitte
 		if( ! allowedBlocks.includes( name ) ) {
 			return(
 				<BlockEdit {...props} />
@@ -44,9 +48,10 @@ const withAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
 		// Ajout de la classe
 		const className = `has-size-${size}`
 
+		// Ajout de l'élément dans l'inspecteur
 		return (
       <Fragment>
-        <BlockEdit { ...props } className={ className } />
+        <BlockEdit { ...props } />
         { isSelected &&
           <InspectorControls>
             <PanelBody title={ __('Text Size', 'capitainewp-gut-bases') } >
@@ -67,11 +72,35 @@ const withAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
       </Fragment>
     );
   };
-}, 'withAdvancedControls');
+}, 'addAdvancedControls');
 
-/**
- * Ajout de la classe dans le HTML sauvegardé
- */
+
+// 3. Ajout de la classe dans le bloc de l'éditeur
+const addCustomClassToBlock = createHigherOrderComponent( ( BlockListBlock ) => {
+  return ( props ) => {
+
+		const { name } = props;
+    const { size } = props.attributes;
+
+		// Si ce n'est pas le bon bloc, on quitte
+		if( ! allowedBlocks.includes( name ) ) {
+			return(
+				<BlockListBlock {...props} />
+			)
+		}
+
+		// Ajout de la classe
+		const className = `has-size-${size}`
+
+		// Ajout de l'élément dans l'inspecteur
+		return (
+			<BlockListBlock { ...props } className={className} />
+    );
+  };
+}, 'addAdvancedControls');
+
+
+// 4. Ajout de la classe dans le HTML sauvegardé
 function applyExtraClass( extraProps, blockType, attributes ) {
   if( ! allowedBlocks.includes( blockType.name ) ) {
     return extraProps;
@@ -82,7 +111,7 @@ function applyExtraClass( extraProps, blockType, attributes ) {
 }
 
 
-// Les filtres
+// Déclaration des filtres
 addFilter(
   'blocks.registerBlockType',
   'capitainewp/custom-attributes',
@@ -91,7 +120,12 @@ addFilter(
 addFilter(
   'editor.BlockEdit',
   'capitainewp/custom-advanced-control',
-  withAdvancedControls
+  addAdvancedControls
+);
+addFilter(
+  'editor.BlockListBlock',
+  'capitainewp/custom-block-class',
+  addCustomClassToBlock
 );
 addFilter(
   'blocks.getSaveContent.extraProps',

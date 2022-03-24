@@ -59,31 +59,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Blocs qui vont subir la modification du hook
 
 const allowedBlocks = ['capitainewp/hook']; // Pourrait être core/button ou core/image par exemple
+// 1. Ajout d'un nouvel attribut dans le bloc
 
-/**
- * Ajout d'un nouvel attribut
- */
+function addAttributes(settings, name) {
+  // Ne rien faire si ce n'est pas notre bloc
+  if (!allowedBlocks.includes(name)) {
+    return settings;
+  } // Ajout de l'attribut et de sa valeur par défaut
 
-function addAttributes(settings) {
-  if (typeof settings.attributes !== 'undefined' && allowedBlocks.includes(settings.name)) {
-    settings.attributes = Object.assign(settings.attributes, {
-      size: {
-        type: 'string',
-        default: 'medium'
-      }
-    });
-  }
 
+  settings.attributes = Object.assign(settings.attributes, {
+    size: {
+      type: 'string',
+      default: 'medium'
+    }
+  });
   return settings;
-}
-/**
- * Ajout des champs de paramétrage dans l'inspecteur
- */
+} // 2. Ajout des champs de paramétrage dans l'inspecteur
 
 
-const withAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(BlockEdit => {
+const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(BlockEdit => {
   return props => {
     const {
       name,
@@ -93,17 +91,16 @@ const withAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.
     } = props;
     const {
       size
-    } = attributes;
+    } = attributes; // Si ce n'est pas le bon bloc, on quitte
 
     if (!allowedBlocks.includes(name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props);
     } // Ajout de la classe
 
 
-    const className = `has-size-${size}`;
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-      className: className
-    })), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
+    const className = `has-size-${size}`; // Ajout de l'élément dans l'inspecteur
+
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text Size', 'capitainewp-gut-bases')
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.SelectControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Size', 'capitainewp-gut-bases'),
@@ -125,10 +122,29 @@ const withAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.
       }
     }))));
   };
-}, 'withAdvancedControls');
-/**
- * Ajout de la classe dans le HTML sauvegardé
- */
+}, 'addAdvancedControls'); // 3. Ajout de la classe dans le bloc de l'éditeur
+
+const addCustomClassToBlock = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(BlockListBlock => {
+  return props => {
+    const {
+      name
+    } = props;
+    const {
+      size
+    } = props.attributes; // Si ce n'est pas le bon bloc, on quitte
+
+    if (!allowedBlocks.includes(name)) {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, props);
+    } // Ajout de la classe
+
+
+    const className = `has-size-${size}`; // Ajout de l'élément dans l'inspecteur
+
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+      className: className
+    }));
+  };
+}, 'addAdvancedControls'); // 4. Ajout de la classe dans le HTML sauvegardé
 
 function applyExtraClass(extraProps, blockType, attributes) {
   if (!allowedBlocks.includes(blockType.name)) {
@@ -140,11 +156,12 @@ function applyExtraClass(extraProps, blockType, attributes) {
   } = attributes;
   extraProps.className += ` has-size-${size}`;
   return extraProps;
-} // Les filtres
+} // Déclaration des filtres
 
 
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('blocks.registerBlockType', 'capitainewp/custom-attributes', addAttributes);
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('editor.BlockEdit', 'capitainewp/custom-advanced-control', withAdvancedControls);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('editor.BlockEdit', 'capitainewp/custom-advanced-control', addAdvancedControls);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('editor.BlockListBlock', 'capitainewp/custom-block-class', addCustomClassToBlock);
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('blocks.getSaveContent.extraProps', 'capitainewp/applyExtraClass', applyExtraClass);
 
 /***/ }),
