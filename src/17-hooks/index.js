@@ -93,7 +93,6 @@ function applyExtraClass( extraProps, blockType, attributes ) {
 
 
 // Filters
-
 addFilter(
   'blocks.registerBlockType',
   'unow/custom-attributes',
