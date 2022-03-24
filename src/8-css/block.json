@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/css",
+	"version": "1.0",
+	"title": "8. CSS",
+	"icon": "admin-appearance",
+	"category": "text",
+	"description": "Un bloc avec du joli CSS",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"number": {
+			"type": "string",
+			"source": "html",
+			"selector": ".number"
+		},
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".title"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

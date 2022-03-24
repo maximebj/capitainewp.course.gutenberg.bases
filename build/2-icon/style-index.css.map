@@ -1,0 +1,1 @@
+{"version":3,"file":"2-icon/style-index.css","mappings":";;;AAAA;EACC;EACA;EACA;AACD,C","sources":["webpack://capitainewp-gut-bases/./src/2-icon/style.scss"],"sourcesContent":[".wp-block-capitainewp-icon {\n\tbackground-color: #347BB5;\n\tcolor: #fff;\n\tpadding: 1em;\n}\n"],"names":[],"sourceRoot":""}

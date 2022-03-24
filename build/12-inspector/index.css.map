@@ -1,0 +1,1 @@
+{"version":3,"file":"12-inspector/index.css","mappings":";;;AACC;EACC;EACA;EACA;EACA;EACA;AAAF,C","sources":["webpack://capitainewp-gut-bases/./src/12-inspector/editor.scss"],"sourcesContent":[".wp-block-capitainewp-inspector {\n\th2 {\n\t\tcolor: #fff;\n\t\tfont-size: 2.5em;\n\t\tline-height: 1.3;\n\t\tmargin: 0;\n\t\tpadding: 0;\n\t}\n}\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"16-innerblocks/style-index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://capitainewp-gut-bases/./src/16-innerblocks/style.scss"],"sourcesContent":[".wp-block-capitainewp-innerblocks {\n\tborder: 3px solid #FF2952;\n\tpadding: 3em;\n}\n"],"names":[],"sourceRoot":""}

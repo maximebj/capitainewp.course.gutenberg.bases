@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/innerblocks",
+	"version": "1.0",
+	"title": "16. Blocs enfants",
+	"icon": "insert-before",
+	"category": "text",
+	"description": "Des blocs dans des blocs !",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

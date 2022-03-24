@@ -1,0 +1,28 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/9-toolbar-custom/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-capitainewp-alert {
+  padding: 15px;
+  border-left: 5px solid;
+  border-radius: 4px;
+  color: white;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.wp-block-capitainewp-alert p:last-child {
+  margin-bottom: 0;
+}
+.wp-block-capitainewp-alert.is-advice {
+  background: #83BD71;
+  border-color: #51893f;
+}
+.wp-block-capitainewp-alert.is-warning {
+  background: #FFC334;
+  border-color: #cd9000;
+}
+.wp-block-capitainewp-alert.is-avoid {
+  background: #FF2952;
+  border-color: #c20025;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

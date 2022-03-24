@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/richtext-alignment",
+	"version": "1.0",
+	"title": "7. Richtext et alignement",
+	"icon": "edit",
+	"category": "text",
+	"description": "Un bloc avec un contenu éditable",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".content"
+		},
+		"alignment": {
+			"type": "string"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

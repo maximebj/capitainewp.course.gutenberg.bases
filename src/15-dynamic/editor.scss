@@ -12,9 +12,7 @@
 	}
 }
 
-.editor-styles-wrapper {
-	ul.wp-block-capitainewp-dynamic {
-		list-style-type: none; // forcer le retrait des puces dans la liste
-		padding-left: 0;
-	}
+ul.wp-block-capitainewp-dynamic {
+	list-style-type: none; // forcer le retrait des puces dans la liste
+	padding-left: 0;
 }

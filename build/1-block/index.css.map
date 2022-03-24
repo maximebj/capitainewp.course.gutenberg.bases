@@ -1,0 +1,1 @@
+{"version":3,"file":"1-block/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://capitainewp-gut-bases/./src/1-block/editor.scss"],"sourcesContent":[".wp-block-capitainewp-first {\n\tborder: 3px solid #f00;\n}\n"],"names":[],"sourceRoot":""}

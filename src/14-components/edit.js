@@ -3,7 +3,7 @@ import { Fragment } from '@wordpress/element'
 
 import './editor.scss'
 
-import Settings from './settings'
+import Inspector from './inspector'
 import Toolbar from './toolbar'
 import Block from './block'
 
@@ -16,7 +16,7 @@ export default function Edit( props ) {
 	return (
 		<Fragment>
 			<Toolbar { ...{ alignment, setAttributes} } />
-			<Settings { ...{ chapterSign, textColor, backgroundColor, withRadius, radius, setAttributes } } />
+			<Inspector { ...{ chapterSign, textColor, backgroundColor, withRadius, radius, setAttributes } } />
 			<Block { ...{ blockProps, setAttributes, attributes } } />
 		</Fragment>
 	)

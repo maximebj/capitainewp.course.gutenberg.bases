@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/url",
+	"version": "1.0",
+	"title": "10. URL",
+	"icon": "admin-links",
+	"category": "text",
+	"description": "Un bloc avec un champ URL",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"source": "text",
+			"selector": "a"
+		},
+		"url": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "href",
+			"selector": "a"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

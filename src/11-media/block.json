@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/media",
+	"version": "1.0",
+	"title": "11. Import de média",
+	"icon": "camera",
+	"category": "text",
+	"description": "Un bloc avec le composant Media",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"pictureID": {
+			"type": "number",
+			"default": null
+		},
+		"pictureURL": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": "img"
+		},
+		"pictureAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": "img"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

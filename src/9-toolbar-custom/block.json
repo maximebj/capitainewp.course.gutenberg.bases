@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/alert",
+	"version": "1.0",
+	"title": "9. Alerte",
+	"icon": "yes-alt",
+	"category": "text",
+	"description": "Un bloc avec différents styles",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".content"
+		},
+		"alignment": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string",
+			"default": "advice"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

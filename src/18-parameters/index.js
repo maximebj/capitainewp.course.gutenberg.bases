@@ -1,5 +1,5 @@
-import { registerBlockType } from '@wordpress/blocks'
 import { __ } from '@wordpress/i18n'
+import { registerBlockType } from '@wordpress/blocks'
 
 import './style.scss'
 
@@ -7,7 +7,7 @@ import Edit from './edit'
 import save from './save'
 
 registerBlockType( 'capitainewp/parameters', {
-	apiVersion: 2,
+	// Dans index.js afin de rendre les chaines traduisibles
 	title: __( '18. Block settings', 'capitainewp-gut-bases' ),
 	description: __(
 		'Some other interesting settings for your blocks.',

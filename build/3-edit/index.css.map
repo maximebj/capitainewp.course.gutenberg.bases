@@ -1,0 +1,1 @@
+{"version":3,"file":"3-edit/index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://capitainewp-gut-bases/./src/3-edit/editor.scss"],"sourcesContent":[".wp-block-capitainewp-edit {\n\tinput {\n\t\tmargin: 28px 0;\n\t}\n}\n"],"names":[],"sourceRoot":""}

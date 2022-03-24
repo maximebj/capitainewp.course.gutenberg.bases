@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/richtext-toolbar",
+	"version": "1.0",
+	"title": "6. Richtext et Toolbar",
+	"icon": "edit",
+	"category": "text",
+	"description": "Un bloc éditable avec le composant Richtext et la Toolbar",
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".content"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"3-edit/style-index.css","mappings":";;;AAAA;EACC;EACA;EACA;EACA;AACD,C","sources":["webpack://capitainewp-gut-bases/./src/3-edit/style.scss"],"sourcesContent":[".wp-block-capitainewp-edit {\n\tbackground: #fefefe;\n\ttext-align: center;\n\tpadding: 30px;\n\tborder: 1px solid #eee;\n}\n"],"names":[],"sourceRoot":""}

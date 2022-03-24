@@ -6,10 +6,7 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
-			{ __(
-				'Capitainewp Gut Bases – hello from the editor!',
-				'capitainewp-gut-bases'
-			) }
+			{ __( 'Bloc avec icône • Contenu affiché dans l’éditeur', 'capitainewp-gut-bases' ) }
 		</p>
 	)
 }

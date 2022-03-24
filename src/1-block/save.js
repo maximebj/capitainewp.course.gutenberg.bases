@@ -1,12 +1,10 @@
-import { __ } from '@wordpress/i18n'
+import { __ } from '@wordpress/i18n';
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save() {
 	return (
-		<p>
-			{ __(
-				'Capitainewp Gut Bases – hello from the saved content!',
-				'capitainewp-gut-bases'
-			) }
+		<p {...useBlockProps.save()}>
+			{__( 'Premier bloc • Contenu sauvegardé en base', 'capitainewp-gut-bases' )}
 		</p>
-	)
+	);
 }

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "capitainewp/richtext-multiline",
+	"version": "1.0",
+	"title": "5. Richtext et multiligne",
+	"icon": "edit",
+	"category": "text",
+	"description": "Un bloc éditable avec le composant Richtext et la prise en charge du multiligne",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".content"
+		}
+	},
+	"textdomain": "capitainewp-gut-bases",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
