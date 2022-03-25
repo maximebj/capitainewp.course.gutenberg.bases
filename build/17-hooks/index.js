@@ -95,10 +95,8 @@ const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.c
 
     if (!allowedBlocks.includes(name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props);
-    } // Ajout de la classe
+    } // Ajout de l'élément dans l'inspecteur
 
-
-    const className = `has-size-${size}`; // Ajout de l'élément dans l'inspecteur
 
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text Size', 'capitainewp-gut-bases')
@@ -122,7 +120,7 @@ const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.c
       }
     }))));
   };
-}, 'addAdvancedControls'); // 3. Ajout de la classe dans le bloc de l'éditeur
+}, 'addAdvancedControls'); // 3. Ajout de la classe dans le bloc dans l'éditeur
 
 const addCustomClassToBlock = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(BlockListBlock => {
   return props => {

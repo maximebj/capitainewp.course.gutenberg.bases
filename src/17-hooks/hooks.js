@@ -45,9 +45,6 @@ const addAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
 			)
 		}
 
-		// Ajout de la classe
-		const className = `has-size-${size}`
-
 		// Ajout de l'élément dans l'inspecteur
 		return (
       <Fragment>
@@ -75,7 +72,7 @@ const addAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
 }, 'addAdvancedControls');
 
 
-// 3. Ajout de la classe dans le bloc de l'éditeur
+// 3. Ajout de la classe dans le bloc dans l'éditeur
 const addCustomClassToBlock = createHigherOrderComponent( ( BlockListBlock ) => {
   return ( props ) => {
 
