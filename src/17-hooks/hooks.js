@@ -32,7 +32,7 @@ function addAttributes( settings, name ) {
 
 
 // 2. Ajout des champs de paramétrage dans l'inspecteur
-const addAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
+const addAdvancedControls = createHigherOrderComponent( ( Block ) => {
   return ( props ) => {
 
 		const { name, attributes, setAttributes, isSelected } = props;
@@ -41,14 +41,14 @@ const addAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
 		// Si ce n'est pas le bon bloc, on quitte
 		if( ! allowedBlocks.includes( name ) ) {
 			return(
-				<BlockEdit {...props} />
+				<Block {...props} />
 			)
 		}
 
 		// Ajout de l'élément dans l'inspecteur
 		return (
       <Fragment>
-        <BlockEdit { ...props } />
+        <Block { ...props } />
         { isSelected &&
           <InspectorControls>
             <PanelBody title={ __('Text Size', 'capitainewp-gut-bases') } >
@@ -73,7 +73,7 @@ const addAdvancedControls = createHigherOrderComponent( ( BlockEdit ) => {
 
 
 // 3. Ajout de la classe dans le bloc dans l'éditeur
-const addCustomClassToBlock = createHigherOrderComponent( ( BlockListBlock ) => {
+const addCustomClassToBlock = createHigherOrderComponent( ( Block ) => {
   return ( props ) => {
 
 		const { name } = props;
@@ -82,7 +82,7 @@ const addCustomClassToBlock = createHigherOrderComponent( ( BlockListBlock ) => 
 		// Si ce n'est pas le bon bloc, on quitte
 		if( ! allowedBlocks.includes( name ) ) {
 			return(
-				<BlockListBlock {...props} />
+				<Block {...props} />
 			)
 		}
 
@@ -91,7 +91,7 @@ const addCustomClassToBlock = createHigherOrderComponent( ( BlockListBlock ) => 
 
 		// Ajout de l'élément dans l'inspecteur
 		return (
-			<BlockListBlock { ...props } className={className} />
+			<Block { ...props } className={className} />
     );
   };
 }, 'addAdvancedControls');

@@ -81,7 +81,7 @@ function addAttributes(settings, name) {
 } // 2. Ajout des champs de paramétrage dans l'inspecteur
 
 
-const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(BlockEdit => {
+const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(Block => {
   return props => {
     const {
       name,
@@ -94,11 +94,11 @@ const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.c
     } = attributes; // Si ce n'est pas le bon bloc, on quitte
 
     if (!allowedBlocks.includes(name)) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props);
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Block, props);
     } // Ajout de l'élément dans l'inspecteur
 
 
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Block, props), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text Size', 'capitainewp-gut-bases')
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.SelectControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Size', 'capitainewp-gut-bases'),
@@ -122,7 +122,7 @@ const addAdvancedControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.c
   };
 }, 'addAdvancedControls'); // 3. Ajout de la classe dans le bloc dans l'éditeur
 
-const addCustomClassToBlock = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(BlockListBlock => {
+const addCustomClassToBlock = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.createHigherOrderComponent)(Block => {
   return props => {
     const {
       name
@@ -132,13 +132,13 @@ const addCustomClassToBlock = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__
     } = props.attributes; // Si ce n'est pas le bon bloc, on quitte
 
     if (!allowedBlocks.includes(name)) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, props);
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Block, props);
     } // Ajout de la classe
 
 
     const className = `has-size-${size}`; // Ajout de l'élément dans l'inspecteur
 
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Block, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
       className: className
     }));
   };
