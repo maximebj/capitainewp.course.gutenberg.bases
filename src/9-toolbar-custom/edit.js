@@ -6,10 +6,8 @@ import {
 	AlignmentToolbar,
 } from '@wordpress/block-editor'
 import {
-	Toolbar,
 	ToolbarGroup,
-	ToolbarButton,
-	Tooltip
+	ToolbarButton
 } from '@wordpress/components'
 import { Fragment } from '@wordpress/element'
 
@@ -29,40 +27,31 @@ export default function Edit( props ) {
 					onChange={ alignment => props.setAttributes( { alignment } ) }
 				/>
 
-				<Toolbar label={ __( 'Styles', 'capitainewp-gut-bases' ) }>
-					<ToolbarGroup>
-						<Tooltip text={ __( 'Advice', 'capitainewp-gut-bases' )  }>
-							<ToolbarButton
-								icon="thumbs-up"
-								className={ [
-									'capitaine-toolbar-green',
-									{ 'is-pressed': props.attributes.type == 'advice' },
-								] }
-								onClick={ () => props.setAttributes( { type: 'advice' } ) }
-							/>
-						</Tooltip>
-						<Tooltip text={ __( 'Warning', 'capitainewp-gut-bases' )  }>
-							<ToolbarButton
-								icon="warning"
-								className={ [
-									'capitaine-toolbar-yellow',
-									{ 'is-pressed': props.attributes.type == 'warning' },
-								 ] }
-								onClick={ () => props.setAttributes( { type: 'warning' } ) }
-							/>
-						</Tooltip>
-						<Tooltip text={ __( 'Avoid', 'capitainewp-gut-bases' )  }>
-							<ToolbarButton
-								icon="dismiss"
-								className={ [
-									'capitaine-toolbar-red',
-									{ 'is-pressed': props.attributes.type == 'avoid' },
-								] }
-								onClick={ () => props.setAttributes( { type: 'avoid' } ) }
-							/>
-						</Tooltip>
-					</ToolbarGroup>
-				</Toolbar>
+				<ToolbarGroup>
+					<ToolbarButton
+						icon="thumbs-up"
+						label={ __( 'Advice', 'capitainewp-gut-bases' )  }
+						className='capitaine-toolbar-green'
+						onClick={ () => props.setAttributes( { type: 'advice' } ) }
+						isPressed={ props.attributes.type == 'advice' }
+					/>
+
+					<ToolbarButton
+						icon="warning"
+						label={ __( 'Warning', 'capitainewp-gut-bases' )  }
+						className='capitaine-toolbar-yellow'
+						onClick={ () => props.setAttributes( { type: 'warning' } ) }
+						isPressed={ props.attributes.type == 'warning' }
+					/>
+
+					<ToolbarButton
+						icon="dismiss"
+						label={ __( 'Avoid', 'capitainewp-gut-bases' )  }
+						className='capitaine-toolbar-red'
+						onClick={ () => props.setAttributes( { type: 'avoid' } ) }
+						isPressed={ props.attributes.type == 'avoid' }
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 
 			<div { ...blockProps }>
