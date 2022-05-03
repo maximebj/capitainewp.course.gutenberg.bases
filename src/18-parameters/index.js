@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n'
-import { registerBlockType } from '@wordpress/blocks'
+import { registerBlockType, createBlock } from '@wordpress/blocks'
 
 import './style.scss'
 

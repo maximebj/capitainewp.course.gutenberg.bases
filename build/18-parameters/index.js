@@ -82,7 +82,7 @@ __webpack_require__.r(__webpack_exports__);
         let {
           content
         } = _ref;
-        return createBlock('capitainewp/parameters', {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)('capitainewp/parameters', {
           content
         });
       }
