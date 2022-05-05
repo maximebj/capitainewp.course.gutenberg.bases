@@ -51,6 +51,12 @@ function capitainewp_gut_bases_block_init()
 		__DIR__ . '/build/19-post',
 		[ 'render_callback' => 'capitainewp_post_render' ]
 	);
+
+	// Ce bloc est également rendu en PHP pour le front
+	register_block_type(
+		__DIR__ . '/build/20-plugin',
+		[ 'render_callback' => 'capitainewp_plugin_render' ]
+	);
 }
 add_action( 'init', 'capitainewp_gut_bases_block_init' );
 
@@ -87,7 +93,7 @@ function capitainewp_dynamic_render( $attributes )
 
 
 /**
- * Rendu dynamique pour le bloc 19
+ * Rendu dynamique pour le bloc 19 : Post
  */
 function capitainewp_post_render( $attributes )
 {
@@ -136,4 +142,213 @@ function capitainewp_post_render( $attributes )
 	endif;
 
 	return $markup;
+}
+
+
+/**
+ * Rendu dynamique pour le bloc 20 : Plugin
+ */
+function capitainewp_plugin_render( $attributes ) {
+
+	// Charger le fichier WordPress qui gère les extensions
+	require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+
+	// Si aucun slug n'est fourni, on n'affiche rien
+	if( is_null( $attributes['slug'] ) ) {
+		return '';
+	}
+
+	// On prépare la requête pour wp.org
+	$request = [
+		'slug' => $attributes['slug'],
+		'fields' => [
+			'title' => true,
+			'short_description' => true,
+			'active_installs' => true,
+			'icons' => true,
+			'sections' => false,
+		]
+	];
+
+	// Envoi de la requête vers l'API wp.org
+	$result = plugins_api( 'plugin_information', $request );
+
+	// Préparation des données dont on aura besoin
+	$plugin = capitainewp_prepare_plugins_data( $result );
+
+	// Démarrage du cache d'affichage php
+	ob_start();
+
+	// inclusion du template
+	include 'templates/plugin.php';
+
+	// Récupération du HTML affiché via echo
+	$markup = ob_get_contents();
+	ob_end_clean();
+
+	return $markup;
+}
+
+
+/**
+ * Requête Ajax pour chercher un plugin sur wp.org
+ */
+function capitainewp_search_plugins() {
+	require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+
+	$request = [
+		'per_page' => 20,
+		'search' => $_POST['search'],
+		'fields' => [
+			'title' => true,
+			'short_description' => true,
+			'active_installs' => true,
+			'icons' => true,
+			'sections' => false,
+		]
+	];
+
+	$results = plugins_api( 'query_plugins', $request );
+	$data = [];
+	$plugins = [];
+
+	foreach( $results->plugins as $plugin ) {
+		$plugins[] = capitainewp_prepare_plugins_data( $plugin );;
+	}
+
+	$data['info'] = $results->info;
+	$data['plugins'] = $plugins;
+
+	wp_send_json_success( $data );
+}
+add_action( 'wp_ajax_capitainewp_search_plugins', 'capitainewp_search_plugins' );
+
+
+/**
+ * Requête Ajax pour récupérer les informations d'un plugin sur wp.org
+ */
+function capitainewp_get_plugin() {
+	require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+
+	$request = [
+		'slug' => $_POST['slug'],
+		'fields' => [
+			'title' => true,
+			'short_description' => true,
+			'active_installs' => true,
+			'icons' => true,
+			'sections' => false,
+		]
+	];
+
+	# Get datas from API
+	$result = plugins_api( 'plugin_information', $request );
+
+	# Prepare datas for template
+	$plugin = capitainewp_prepare_plugins_data( $result );
+
+	wp_send_json_success( $plugin );
+}
+add_action( 'wp_ajax_capitainewp_get_plugin', 'capitainewp_get_plugin' );
+
+
+/**
+ * Préparer les données pour le plugin
+ */
+function capitainewp_prepare_plugins_data( $data ) {
+
+	// On force l'obtention d'un objet (parfois on obtient un tableau)
+	if( is_array( $data ) ) { $data = (object) $data; }
+
+	// On prépare les données
+	return [
+		'slug' => $data->slug,
+		'name' => html_entity_decode( $data->name ),
+		'description' => html_entity_decode( $data->short_description ),
+		'icon' => capitainewp_define_image( $data->icons ),
+		'stars' => capitainewp_set_stars( $data->rating ),
+		'activeInstalls' => capitainewp_format_installs( $data->active_installs ),
+		'downloadLink' => "https://wordpress.org/plugins/" . $data->slug,
+		'rating' => $data->rating,
+		'numRatings' => $data->num_ratings,
+		'author' => strip_tags( $data->author ),
+		'homepage' => $data->homepage,
+		'numRatings' => $data->num_ratings,
+	];
+}
+
+function capitainewp_define_image( $icons ) {
+	if ( array_key_exists( '2x', $icons ) ) {
+		return $icons['2x'];
+	} else if( array_key_exists( '1x', $icons ) ) {
+		return $icons['1x'];
+	} else {
+		return $icons['default'];
+	}
+}
+
+function capitainewp_format_installs( $installs ) {
+	if ( $installs >= 1000000 ) {
+		return '1+ Million';
+	}
+	else if( $installs < 10 ) {
+		return 'Moins de 10';
+	}
+
+	return $installs . '+';
+}
+
+function capitainewp_set_stars( $rating ) {
+	$rating = intval( $rating ) / 20;
+	$floor = floor( $rating );
+
+	$max = 5;
+	$last = 0;
+
+	$stars = '';
+
+	for( $i=0; $i < $floor; $i++ ) {
+		$stars.= capitainewp_get_star_svg( 'filled' );
+		$last++;
+	}
+
+	if( $floor != $rating ) {
+		$stars.= capitainewp_get_star_svg( 'half' );
+		$last++;
+	}
+
+	for ( $i = $last; $i < $max; $i++ ) {
+		$stars.= capitainewp_get_star_svg( 'empty' );
+	}
+
+	return $stars;
+}
+
+function capitainewp_get_star_svg( $type ){
+	if( $type == "filled" ) {
+		return "
+			<svg width='18px' height='18px'>
+				<g fill='#F5BC41'>
+					<polygon points='9 0 12 6 18 6.75 13.88 11.37 15 18 9 15 3 18 4.13 11.37 0 6.75 6 6'></polygon>
+				</g>
+			</svg>
+		";
+
+	} else if ( $type == "half" ) {
+		return "
+			<svg width='18px' height='18px'>
+				<g fill='#F5BC41'>
+					<path d='M9,0 L6,6 L0,6.75 L4.13,11.37 L3,18 L9,15 L15,18 L13.88,11.37 L18,6.75 L12,6 L9,0 Z M9,2.24 L11.34,6.93 L15.99,7.51 L12.81,11.07 L13.68,16.22 L9,13.88 L9,2.24 Z'></path>
+				</g>
+			</svg>
+		";
+	}
+
+	return "
+		<svg width='18px' height='18px'>
+			<g fill='#F5BC41'>
+				<path d='M9,0 L6,6 L0,6.75 L4.13,11.37 L3,18 L9,15 L15,18 L13.88,11.37 L18,6.75 L12,6 L9,0 Z M9,2.24 L11.34,6.93 L15.99,7.51 L12.81,11.07 L13.68,16.22 L9,13.88 L4.32,16.22 L5.19,11.07 L2.01,7.51 L6.66,6.93 L9,2.24 Z'></path>
+			</g>
+		</svg>
+	";
 }

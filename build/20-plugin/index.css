@@ -1,0 +1,17 @@
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/20-plugin/editor.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+.wp-block-capitainewp-plugin .wp-block-capitainewp-plugin__rating,
+.wp-block-capitainewp-plugin .wp-block-capitainewp-plugin__active {
+  margin: 0;
+  font-size: 16px;
+}
+.wp-block-capitainewp-plugin a {
+  text-decoration: none;
+}
+.wp-block-capitainewp-plugin a.wp-block-capitainewp-plugin__button {
+  color: white;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=index.css.map*/
