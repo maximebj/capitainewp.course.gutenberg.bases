@@ -6,7 +6,8 @@ import SearchPost from '../components/searchpost'
 
 export default function Inspector( props ) {
 
-	const { attributes: { postID, showImage, showAuthor, showCategory }, setAttributes } = props
+	const { attributes, setAttributes } = props
+	const { postID, showImage, showAuthor, showCategory } = attributes
 
 	return (
 		<InspectorControls>

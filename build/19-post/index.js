@@ -35,12 +35,12 @@ function Block(props) {
     showImage,
     showCategory,
     showAuthor
-  } = props; // Définition des états
+  } = props; // Hook React : Définition des états. Mise à jour d'un état = mise à jour du DOM
 
   const [post, setPost] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
   const [author, setAuthor] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
   const [category, setCategory] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
-  const [featuredImage, setFeaturedImage] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false); // Hook React : lance la fonction getPost lorsque la valeur de postID change
+  const [featuredImage, setFeaturedImage] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false); // Lance la fonction (param 1) lorsque la valeur (param 2) change
 
   (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => getPost(), [postID]);
   (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => getAuthor(), [post]);
@@ -218,14 +218,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function Inspector(props) {
   const {
-    attributes: {
-      postID,
-      showImage,
-      showAuthor,
-      showCategory
-    },
+    attributes,
     setAttributes
   } = props;
+  const {
+    postID,
+    showImage,
+    showAuthor,
+    showCategory
+  } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_blockEditor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Choose a post', 'capitainewp-gut-bases')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_searchpost__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -346,7 +347,7 @@ function SearchPost(props) {
     onChange
   } = props;
   const [results, setResults] = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(false);
-  const onSearch = (0,throttle_debounce__WEBPACK_IMPORTED_MODULE_4__.debounce)(300, search => {
+  const search = (0,throttle_debounce__WEBPACK_IMPORTED_MODULE_4__.debounce)(300, search => {
     if (search.length < 3) {
       return;
     }
@@ -365,7 +366,7 @@ function SearchPost(props) {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     type: "search",
     placeholder: placeholder,
-    onChange: value => onSearch(value)
+    onChange: value => search(value)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "capitainewp-results"
   }, results && Array.isArray(results) ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, results.map(result => {

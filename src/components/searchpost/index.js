@@ -12,7 +12,7 @@ export default function SearchPost( props ) {
 	const { postType, placeholder, onChange } = props
 	const [ results, setResults ] = useState( false );
 
-  const onSearch = debounce( 300, search => {
+  const search = debounce( 300, search => {
 
     if( search.length < 3 ) { return }
 
@@ -33,7 +33,7 @@ export default function SearchPost( props ) {
 			<TextControl
 				type="search"
 				placeholder={ placeholder }
-				onChange={ value => onSearch( value ) }
+				onChange={ value => search( value ) }
 			/>
 
 			<div className="capitainewp-results">

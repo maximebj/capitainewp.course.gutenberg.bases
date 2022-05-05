@@ -9,13 +9,13 @@ export default function Block( props ) {
 
 	const { postID, showImage, showCategory, showAuthor  } = props
 
-	// Définition des états
+	// Hook React : Définition des états. Mise à jour d'un état = mise à jour du DOM
 	const [ post, setPost ] = useState( false );
 	const [ author, setAuthor ] = useState( false );
 	const [ category, setCategory ] = useState( false );
 	const [ featuredImage, setFeaturedImage ] = useState( false );
 
-	// Hook React : lance la fonction getPost lorsque la valeur de postID change
+	// Lance la fonction (param 1) lorsque la valeur (param 2) change
 	useEffect( () => getPost(), [ postID ] )
 	useEffect( () => getAuthor(), [ post ] )
 	useEffect( () => getCategory(), [ post ] )
