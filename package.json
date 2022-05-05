@@ -16,5 +16,9 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^22.2.1"
+	},
+	"dependencies": {
+		"save": "^2.5.0",
+		"throttle-debounce": "^5.0.0"
 	}
 }

@@ -1,0 +1,114 @@
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/19-post/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wp-block-capitainewp-post {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wp-block-capitainewp-post__image {
+  flex: 1;
+  text-decoration: none;
+  border-right: 1px solid #ccc;
+  background-size: cover;
+  background-position: center;
+}
+.wp-block-capitainewp-post__image img {
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-block-capitainewp-post__content {
+  flex: 2;
+  padding: 1em;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__title {
+  margin: 0 0 0.5em 0;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__title a {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #444;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__metas {
+  margin: 0;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__metas em {
+  line-height: 1.3;
+  margin: 0.5em 0;
+  color: #888;
+  font-size: 0.85em;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__metas span + span:before {
+  content: "• ";
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__excerpt p {
+  font-size: 0.9em;
+  margin: 1em 0;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__actions {
+  margin-bottom: 0;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 4px;
+  color: white;
+  background: #444;
+  font-size: 0.9em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+.wp-block-capitainewp-post__content .wp-block-capitainewp-post__button:hover {
+  color: white;
+  background-color: #5e5e5e;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/message/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.capitainewp-message {
+  border-radius: 10px;
+  text-align: center;
+  font-style: italic;
+  color: #bbb;
+  padding: 10px 20px;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/components/searchpost/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.capitainewp-results p {
+  margin: 10px 0;
+  text-align: center;
+}
+.capitainewp-results ul {
+  margin-top: 10px;
+  list-style-type: none;
+  border: 1px solid #E3E4E7;
+}
+.capitainewp-results li {
+  overflow: auto;
+  margin: 0;
+  padding: 10px;
+}
+.capitainewp-results li:not(:first-child) {
+  border-top: 1px solid #E3E4E7;
+}
+.capitainewp-results li:hover {
+  background: #efefef;
+  cursor: pointer;
+}
+.capitainewp-results img {
+  float: left;
+  margin-right: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -45,6 +45,12 @@ function capitainewp_gut_bases_block_init()
 	register_block_type( __DIR__ . '/build/16-innerblocks' );
 	register_block_type( __DIR__ . '/build/17-hooks' );
 	register_block_type( __DIR__ . '/build/18-parameters' );
+
+	// Ce bloc est également rendu en PHP pour le front
+	register_block_type(
+		__DIR__ . '/build/19-post',
+		[ 'render_callback' => 'capitainewp_post_render' ]
+	);
 }
 add_action( 'init', 'capitainewp_gut_bases_block_init' );
 
@@ -75,6 +81,59 @@ function capitainewp_dynamic_render( $attributes )
 		);
 	}
 	$markup .= '</ul>';
+
+	return $markup;
+}
+
+
+/**
+ * Rendu dynamique pour le bloc 19
+ */
+function capitainewp_post_render( $attributes )
+{
+	// Récupération de l'ID de l'article dans le commentaire HTML
+	$id = $attributes['postID'];
+
+	// Requête pour récupérer l'article et préparer les données
+	$query = new WP_Query( [ 'p' => $id ] );
+	if( $query->have_posts() ): while( $query->have_posts() ): $query->the_post();
+
+	// Récupération de l'image, l'auteur et la catégorie (s'ils sont définis)
+	$image = false;
+	$author = false;
+	$category = false;
+
+	if( $attributes['showImage'] !== false ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+		$image = $image[0];
+	}
+
+	if( $attributes['showAuthor'] !== false ) {
+		$author = get_the_author_meta( 'display_name' );
+	}
+
+	if ( $attributes['showCategory'] !== false ) {
+		$categories = get_the_category();
+
+		if ( !empty( $categories ) ) {
+			$category = $categories[0]->name;
+		}
+  }
+
+	// Démarrage du cache d'affichage php
+	ob_start();
+
+	// inclusion du template
+	include 'templates/post.php';
+
+	// Récupération du HTML affiché via echo
+	$markup = ob_get_contents();
+	ob_end_clean();
+
+	// Fin de la requête
+	endwhile;
+	wp_reset_postdata();
+	endif;
 
 	return $markup;
 }
