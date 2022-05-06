@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n'
+import { useSelect } from '@wordpress/data'
 import { useBlockProps } from '@wordpress/block-editor'
 import { Spinner } from '@wordpress/components'
 
@@ -6,7 +7,11 @@ import './editor.scss'
 
 export default function Edit( props ) {
 	const blockProps = useBlockProps()
-	const { posts } = props // Posts est la valeur récupérée par withSelect
+
+	// Récupération dynamique des articles
+	const posts = useSelect( select => {
+		return select( 'core' ).getEntityRecords( 'postType', 'post', { per_page: 3 } )
+	} )
 
 	console.log( posts )
 
