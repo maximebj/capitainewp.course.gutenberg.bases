@@ -1,3 +1,3 @@
-export default function Save() {
+export default function save() {
 	return null
 }

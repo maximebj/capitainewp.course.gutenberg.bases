@@ -202,9 +202,9 @@ function Inspector(props) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ Save; }
+/* harmony export */   "default": function() { return /* binding */ save; }
 /* harmony export */ });
-function Save() {
+function save() {
   return null;
 }
 
