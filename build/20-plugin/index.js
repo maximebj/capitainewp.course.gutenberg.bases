@@ -26,8 +26,11 @@ __webpack_require__.r(__webpack_exports__);
 function Block(props) {
   const {
     slug
-  } = props.attributes;
-  const [plugin, setPlugin] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  } = props.attributes; // Définition d'un état : si plugin change, le composant est rendu à nouveau
+
+  const [plugin, setPlugin] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false); // Lorsque le slug change, on exécute getPlugin
+
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => getPlugin(), [slug]);
 
   const getPlugin = () => {
     fetch(ajaxurl, {
@@ -40,7 +43,6 @@ function Block(props) {
     }).then(response => response.json()).then(response => setPlugin(response.data));
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => getPlugin(), [slug]);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
   return plugin ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wp-block-capitainewp-plugin__content"
@@ -276,8 +278,10 @@ function SearchPlugin(props) {
       return;
     }
 
-    setResults("Chargement…");
+    setResults("Chargement…"); // Requête ajax vers notre fonction PHP
+
     fetch(ajaxurl, {
+      // ajaxurl = variable fournie par WP pour accéder au serveur en ajax
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
@@ -285,12 +289,14 @@ function SearchPlugin(props) {
       body: 'action=capitainewp_search_plugins&search=' + encodeURIComponent(search),
       credentials: 'same-origin'
     }).then(response => response.json()).then(response => {
-      if (response.data.plugins.length == 0) {
+      // Lorsque la requête a fonctionné
+      if (response.data.length == 0) {
         setResults('Aucun résultat');
       } else {
-        setResults(response.data.plugins);
+        setResults(response.data);
       }
     }).catch(error => {
+      // En cas d'erreur
       console.log(error);
       setResults('⚠️ Erreur : impossible de joindre wordpress.org');
     });

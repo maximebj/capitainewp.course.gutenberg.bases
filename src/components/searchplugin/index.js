@@ -16,7 +16,8 @@ export default function SearchPlugin( props ) {
 
 		setResults( "Chargement…" )
 
-		fetch( ajaxurl, {
+		// Requête ajax vers notre fonction PHP
+		fetch( ajaxurl, { // ajaxurl = variable fournie par WP pour accéder au serveur en ajax
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
@@ -25,14 +26,14 @@ export default function SearchPlugin( props ) {
       credentials: 'same-origin'
     } )
     .then( response => response.json() )
-    .then( response => {
-			if( response.data.plugins.length == 0 ) {
+		.then( response => { // Lorsque la requête a fonctionné
+			if( response.data.length == 0 ) {
 				setResults( 'Aucun résultat' )
       } else {
-        setResults( response.data.plugins )
+        setResults( response.data )
 			}
     } )
-		.catch( error => {
+		.catch( error => { // En cas d'erreur
 			console.log( error )
 			setResults( '⚠️ Erreur : impossible de joindre wordpress.org' )
     } )

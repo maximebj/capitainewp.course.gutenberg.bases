@@ -7,7 +7,11 @@ export default function Block( props ) {
 
 	const { slug } = props.attributes
 
+	// Définition d'un état : si plugin change, le composant est rendu à nouveau
 	const [ plugin, setPlugin ] = useState( false );
+
+	// Lorsque le slug change, on exécute getPlugin
+	useEffect( () => getPlugin(), [ slug ] )
 
   const getPlugin = () => {
 
@@ -22,8 +26,6 @@ export default function Block( props ) {
     .then( response => response.json() )
     .then( response => setPlugin( response.data ) )
 	}
-
-	useEffect( () => getPlugin(), [ slug ] )
 
 	const blockProps = useBlockProps()
 

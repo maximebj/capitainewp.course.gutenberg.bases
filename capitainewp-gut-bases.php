@@ -194,11 +194,14 @@ function capitainewp_plugin_render( $attributes ) {
  * Requête Ajax pour chercher un plugin sur wp.org
  */
 function capitainewp_search_plugins() {
+
+	// Charger le fichier WordPress qui gère les extensions
 	require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
+	// Paramètres de la requête de recherche
 	$request = [
-		'per_page' => 20,
-		'search' => $_POST['search'],
+		'per_page' => 20, // Nombre de résultats à afficher
+		'search' => $_POST['search'], // La recherche saisie par l'utilisateur
 		'fields' => [
 			'title' => true,
 			'short_description' => true,
@@ -208,18 +211,17 @@ function capitainewp_search_plugins() {
 		]
 	];
 
+	// La fonction fournie par WordPress
 	$results = plugins_api( 'query_plugins', $request );
-	$data = [];
 	$plugins = [];
 
+	// Je prépare les données en vue de leur affichage en JS
 	foreach( $results->plugins as $plugin ) {
-		$plugins[] = capitainewp_prepare_plugins_data( $plugin );;
+		$plugins[] = capitainewp_prepare_plugins_data( $plugin );
 	}
 
-	$data['info'] = $results->info;
-	$data['plugins'] = $plugins;
-
-	wp_send_json_success( $data );
+	// Et je renvois à JS en JSON
+	wp_send_json_success( $plugins );
 }
 add_action( 'wp_ajax_capitainewp_search_plugins', 'capitainewp_search_plugins' );
 
@@ -231,7 +233,7 @@ function capitainewp_get_plugin() {
 	require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
 	$request = [
-		'slug' => $_POST['slug'],
+		'slug' => $_POST['slug'], // On fournit cette fois le slug de l'extension
 		'fields' => [
 			'title' => true,
 			'short_description' => true,
@@ -241,12 +243,13 @@ function capitainewp_get_plugin() {
 		]
 	];
 
-	# Get datas from API
+	// On demande à l'API de wp.org de nous renvoyer les informations de l'extension
 	$result = plugins_api( 'plugin_information', $request );
 
-	# Prepare datas for template
+	// Et on trie les données pour JS
 	$plugin = capitainewp_prepare_plugins_data( $result );
 
+	// Enfin, on renvoie à JS en JSON
 	wp_send_json_success( $plugin );
 }
 add_action( 'wp_ajax_capitainewp_get_plugin', 'capitainewp_get_plugin' );
@@ -277,6 +280,10 @@ function capitainewp_prepare_plugins_data( $data ) {
 	];
 }
 
+
+/**
+ * Récupérer l'image la plus appropriée en commençant par la version haute résolution si disponible
+ */
 function capitainewp_define_image( $icons ) {
 	if ( array_key_exists( '2x', $icons ) ) {
 		return $icons['2x'];
@@ -287,6 +294,10 @@ function capitainewp_define_image( $icons ) {
 	}
 }
 
+
+/**
+ * Optimiser le libellé du nombre d'installations actives
+ */
 function capitainewp_format_installs( $installs ) {
 	if ( $installs >= 1000000 ) {
 		return '1+ Million';
@@ -298,6 +309,10 @@ function capitainewp_format_installs( $installs ) {
 	return $installs . '+';
 }
 
+
+/**
+ * Transformer la note sur 100 en étoiles
+ */
 function capitainewp_set_stars( $rating ) {
 	$rating = intval( $rating ) / 20;
 	$floor = floor( $rating );
@@ -324,6 +339,10 @@ function capitainewp_set_stars( $rating ) {
 	return $stars;
 }
 
+
+/**
+ * Étoiles SVG pleines, semi-pleines et vides
+ */
 function capitainewp_get_star_svg( $type ){
 	if( $type == "filled" ) {
 		return "
