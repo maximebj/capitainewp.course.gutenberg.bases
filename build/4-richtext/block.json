@@ -1,24 +1,19 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "capitainewp/edit",
+  "name": "capitainewp/richtext",
   "version": "1.0",
-  "title": "3. Bloc éditable",
+  "title": "4. Richtext",
   "icon": "edit",
   "category": "text",
-  "keywords": [
-    "Capitaine WP",
-    "Gutenberg",
-    "édition"
-  ],
-  "description": "Un bloc avec un contenu éditable",
+  "description": "Un bloc éditable avec le composant Richtext",
   "supports": {
     "html": false
   },
   "attributes": {
     "content": {
       "type": "string",
-      "source": "text",
+      "source": "html",
       "selector": ".content"
     }
   },
