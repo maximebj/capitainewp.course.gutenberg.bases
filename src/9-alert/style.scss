@@ -1,0 +1,32 @@
+@import 'vars';
+
+.wp-block-capitainewp-alert {
+	padding: 15px;
+	border-left: 5px solid;
+	border-radius: 4px;
+	color: white;
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	// Style Conseil
+	&.is-advice {
+		background: $green;
+		border-color: darken($green, 20%);
+	}
+
+	// Style Avertissement
+	&.is-warning {
+		background: $yellow;
+		border-color: darken($yellow, 20%);
+	}
+
+	// Style Interdiction
+	&.is-avoid {
+		background: $red;
+		border-color: darken($red, 20%);
+	}
+}

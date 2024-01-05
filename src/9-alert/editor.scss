@@ -1,0 +1,15 @@
+// On met les variables en commun (dans ce bloc seulement)
+@import 'vars';
+
+// Boutons de la Toolbar
+.capitaine-toolbar-green {
+	color: $green;
+}
+
+.capitaine-toolbar-yellow {
+	color: $yellow;
+}
+
+.capitaine-toolbar-red {
+	color: $red;
+}
