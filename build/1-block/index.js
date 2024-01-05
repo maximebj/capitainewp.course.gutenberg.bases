@@ -378,7 +378,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkformation_gut"] = globalThis["webpackChunkformation_gut"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkcaptaine_wp_gut_bases"] = globalThis["webpackChunkcaptaine_wp_gut_bases"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

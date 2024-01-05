@@ -30,5 +30,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 function formation_gut_formation_gut_block_init() {
 	register_block_type( __DIR__ . '/build/1-block' );
 	register_block_type( __DIR__ . '/build/2-icon' );
+	register_block_type( __DIR__ . '/build/2-edit' );
 }
 add_action( 'init', 'formation_gut_formation_gut_block_init' );

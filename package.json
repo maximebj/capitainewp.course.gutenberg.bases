@@ -1,8 +1,8 @@
 {
-	"name": "formation-gut",
+	"name": "captaine-wp-gut-bases",
 	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"description": "A set of example blocks written with ESNext",
+	"author": "Capitaine WP",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -16,9 +16,5 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^26.19.0"
-	},
-	"dependencies": {
-		"@wordpress/browserslist-config": "^5.31.0",
-		"browserslist": "^4.22.2"
 	}
 }
