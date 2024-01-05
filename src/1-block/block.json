@@ -1,18 +1,20 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "capitainewp/first",
 	"version": "1.0",
-	"title": "1. Premier bloc",
+	"title": "Premier",
 	"icon": "smiley",
 	"category": "text",
 	"keywords": [ "Premier bloc", "Capitaine WP", "Gutenberg" ],
 	"description": "Mon premier bloc Gutenberg",
+	"example": {},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "capitainewp-gut-bases",
+	"textdomain": "formation-gut-bases",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
 }

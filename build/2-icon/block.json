@@ -1,18 +1,24 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
-	"name": "capitainewp/icon",
-	"version": "1.0",
-	"title": "2. Bloc avec une icône",
-	"icon": "smiley",
-	"category": "text",
-	"keywords": [ "Capitaine WP", "Gutenberg", "icône" ],
-	"description": "Un bloc avec une icône personnalisée SVG",
-	"supports": {
-		"html": false
-	},
-	"textdomain": "capitainewp-gut-bases",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "capitainewp/icon",
+  "version": "1.0",
+  "title": "2. Bloc avec une icône",
+  "icon": "smiley",
+  "category": "text",
+  "keywords": [
+    "Capitaine WP",
+    "Gutenberg",
+    "icône"
+  ],
+  "description": "Un bloc avec une icône personnalisée SVG",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "formation-gut-bases",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
 }
