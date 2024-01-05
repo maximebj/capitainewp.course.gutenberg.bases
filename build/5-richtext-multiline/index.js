@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/4-richtext/edit.js":
-/*!********************************!*\
-  !*** ./src/4-richtext/edit.js ***!
-  \********************************/
+/***/ "./src/5-richtext-multiline/edit.js":
+/*!******************************************!*\
+  !*** ./src/5-richtext-multiline/edit.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18,47 +18,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/4-richtext/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/5-richtext-multiline/editor.scss");
 
 
 
 
 function Edit(props) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-
-  // La fonction qui met à jour la valeur
-  const onChangeContent = content => {
-    props.setAttributes({
-      content: content
-    });
-    // ceci fonctionerait aussi grâce à ESNext ;) props.setAttributes( { content } )
-  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
+    tagName: "div",
+    multiline: "p",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Write your content here', 'capitainewp-gut-bases'),
     value: props.attributes.content,
     className: "content",
-    onChange: onChangeContent
+    onChange: content => props.setAttributes({
+      content
+    }) // Sauvegarde de l'attribut
   }));
 }
 
 /***/ }),
 
-/***/ "./src/4-richtext/index.js":
-/*!*********************************!*\
-  !*** ./src/4-richtext/index.js ***!
-  \*********************************/
+/***/ "./src/5-richtext-multiline/index.js":
+/*!*******************************************!*\
+  !*** ./src/5-richtext-multiline/index.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/4-richtext/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/4-richtext/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/4-richtext/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/4-richtext/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/5-richtext-multiline/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/5-richtext-multiline/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/5-richtext-multiline/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/5-richtext-multiline/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -100,10 +95,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/4-richtext/save.js":
-/*!********************************!*\
-  !*** ./src/4-richtext/save.js ***!
-  \********************************/
+/***/ "./src/5-richtext-multiline/save.js":
+/*!******************************************!*\
+  !*** ./src/5-richtext-multiline/save.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -124,7 +119,7 @@ function save(props) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "p",
+    tagName: "div",
     className: "content",
     value: props.attributes.content
   }));
@@ -132,10 +127,10 @@ function save(props) {
 
 /***/ }),
 
-/***/ "./src/4-richtext/editor.scss":
-/*!************************************!*\
-  !*** ./src/4-richtext/editor.scss ***!
-  \************************************/
+/***/ "./src/5-richtext-multiline/editor.scss":
+/*!**********************************************!*\
+  !*** ./src/5-richtext-multiline/editor.scss ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -144,10 +139,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/4-richtext/style.scss":
-/*!***********************************!*\
-  !*** ./src/4-richtext/style.scss ***!
-  \***********************************/
+/***/ "./src/5-richtext-multiline/style.scss":
+/*!*********************************************!*\
+  !*** ./src/5-richtext-multiline/style.scss ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -196,13 +191,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/4-richtext/block.json":
-/*!***********************************!*\
-  !*** ./src/4-richtext/block.json ***!
-  \***********************************/
+/***/ "./src/5-richtext-multiline/block.json":
+/*!*********************************************!*\
+  !*** ./src/5-richtext-multiline/block.json ***!
+  \*********************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"capitainewp/richtext","version":"1.0","title":"4. Richtext","icon":"edit","category":"text","description":"Un bloc éditable avec le composant Richtext","supports":{"html":false},"attributes":{"content":{"type":"string","source":"html","selector":".content"}},"textdomain":"capitainewp-gut-bases","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"capitainewp/richtext-multiline","version":"1.0","title":"5. Richtext et multiligne","icon":"edit","category":"text","description":"Un bloc éditable avec le composant Richtext et la prise en charge du multiligne","supports":{"html":false},"attributes":{"content":{"type":"string","source":"html","selector":".content"}},"textdomain":"capitainewp-gut-bases","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
@@ -316,8 +311,8 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"4-richtext/index": 0,
-/******/ 			"4-richtext/style-index": 0
+/******/ 			"5-richtext-multiline/index": 0,
+/******/ 			"5-richtext-multiline/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -367,7 +362,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["4-richtext/style-index"], () => (__webpack_require__("./src/4-richtext/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["5-richtext-multiline/style-index"], () => (__webpack_require__("./src/5-richtext-multiline/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

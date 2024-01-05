@@ -32,5 +32,6 @@ function formation_gut_formation_gut_block_init() {
 	register_block_type( __DIR__ . '/build/2-icon' );
 	register_block_type( __DIR__ . '/build/3-edit' );
 	register_block_type( __DIR__ . '/build/4-richtext' );
+	register_block_type( __DIR__ . '/build/5-richtext-multiline' );
 }
 add_action( 'init', 'formation_gut_formation_gut_block_init' );
