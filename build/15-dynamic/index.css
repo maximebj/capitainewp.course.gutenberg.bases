@@ -1,0 +1,22 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/15-dynamic/editor.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.capitaine-placeholder {
+  background: #fcfcfc;
+  border: 1px solid #ddd;
+  color: #999;
+  padding: 40px;
+  text-align: center;
+  line-height: 20px;
+}
+.capitaine-placeholder .spinner {
+  float: none;
+  margin-top: -2px;
+}
+
+ul.wp-block-capitainewp-dynamic {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/*# sourceMappingURL=index.css.map*/
