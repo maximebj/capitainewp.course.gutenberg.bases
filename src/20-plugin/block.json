@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "capitainewp/plugin",
+	"version": "1.0",
+	"title": "20. Bloc Plugin",
+	"category": "capitainewp",
+	"icon": "admin-plugins",
+	"description": "Présentation d'une extension du répertoire de plugins WordPress.org.",
+	"attributes": {
+		"slug": {
+			"type": "string",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+  	"align": true
+	},
+	"textdomain": "capitainewp-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
