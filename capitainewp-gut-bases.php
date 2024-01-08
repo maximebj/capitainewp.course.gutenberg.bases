@@ -41,5 +41,6 @@ function formation_gut_formation_gut_block_init() {
 	register_block_type( __DIR__ . '/build/11-media' );
 	register_block_type( __DIR__ . '/build/12-inspector' );
 	register_block_type( __DIR__ . '/build/13-destructuration' );
+	register_block_type( __DIR__ . '/build/14-components' );
 }
 add_action( 'init', 'formation_gut_formation_gut_block_init' );
