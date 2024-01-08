@@ -44,7 +44,7 @@ export default function Edit( props ) {
 								instructions={ __( 'Select a picture', 'capitainewp-gut-bases' ) }
 							>
 								<Button
-									//isSecondary deprecated : https://github.com/WordPress/gutenberg/issues/2587
+									variant='secondary' //isSecondary deprecated : https://github.com/WordPress/gutenberg/issues/2587
 									isLarge
 									onClick={ open }
 									icon="upload"
