@@ -14,6 +14,12 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import './style.scss';
 
+
+/**
+ * Import hook files
+ */
+import './hooks';
+
 /**
  * Internal dependencies
  */
