@@ -13,7 +13,7 @@ export default function Edit( props ) {
 		return select( 'core' ).getEntityRecords( 'postType', 'post', { per_page: 3 } )
 	} )
 
-	//console.log( posts )
+	console.log( posts )
 
 	// L'API n'a pas encore répondu
 	if ( ! posts ) {
