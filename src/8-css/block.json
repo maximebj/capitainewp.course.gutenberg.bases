@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "capitainewp/css",
-	"version": "1.0",
+	"version": "1.1",
 	"title": "8. CSS",
 	"icon": "admin-appearance",
 	"category": "text",
