@@ -38,5 +38,6 @@ function formation_gut_formation_gut_block_init() {
 	register_block_type( __DIR__ . '/build/8-css' );
 	register_block_type( __DIR__ . '/build/9-alert' );
 	register_block_type( __DIR__ . '/build/10-url' );
+	register_block_type( __DIR__ . '/build/11-media' );
 }
 add_action( 'init', 'formation_gut_formation_gut_block_init' );
