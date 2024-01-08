@@ -51,7 +51,7 @@ function capitainewp_gut_bases_block_init() {
 
 	register_block_type( __DIR__ . '/build/16-innerblocks' );
 	register_block_type( __DIR__ . '/build/17-hooks' );
-	register_block_type( __DIR__ . '/build/18-parameters' ); //still relevant ??? Nothing in the lessons on this one 
+	//register_block_type( __DIR__ . '/build/18-parameters' ); //still relevant ??? Nothing in the lessons on this one 
 
 	// Ce bloc est également rendu en PHP pour le front
 	register_block_type(
