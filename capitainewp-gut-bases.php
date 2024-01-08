@@ -53,6 +53,44 @@ function capitainewp_gut_bases_block_init() {
 	register_block_type( __DIR__ . '/build/17-hooks' );
 	register_block_type( __DIR__ . '/build/18-parameters' ); //still relevant ??? Nothing in the lessons on this one 
 
+	// Ce bloc est également rendu en PHP pour le front
+	register_block_type(
+		__DIR__ . '/build/19-post',
+		[ 'render_callback' => 'capitainewp_post_render' ]
+	);
+
+
 }
 
 add_action( 'init', 'capitainewp_gut_bases_block_init' );
+
+
+/**
+ * Rendu dynamique pour le bloc 15
+ */
+function capitainewp_dynamic_render( $attributes )
+{
+	$args = [
+		'posts_per_page' => 3,
+	];
+
+	$posts = get_posts( $args );
+
+	if( count( $posts ) == 0 ) {
+		return '<p>Pas d’article</p>';
+	}
+
+	$markup = '<ul class="wp-block-capitainewp-dynamic">';
+
+	foreach( $posts as $post ) {
+
+		$markup .= sprintf(
+			'<li><a href="%1$s">%2$s</a></li>',
+			esc_url( get_permalink( $post->ID ) ),
+			esc_html( get_the_title( $post->ID ) )
+		);
+	}
+	$markup .= '</ul>';
+
+	return $markup;
+}
