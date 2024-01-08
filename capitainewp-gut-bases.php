@@ -48,6 +48,9 @@ function capitainewp_gut_bases_block_init() {
 		__DIR__ . '/build/15-dynamic',
 		[ 'render_callback' => 'capitainewp_dynamic_render' ]
 	);
+
+	register_block_type( __DIR__ . '/build/16-innerblocks' );
+
 }
 
 add_action( 'init', 'capitainewp_gut_bases_block_init' );
