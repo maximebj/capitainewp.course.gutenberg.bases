@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function formation_gut_formation_gut_block_init() {
+function capitainewp_gut_bases_block_init() {
 	register_block_type( __DIR__ . '/build/1-block' );
 	register_block_type( __DIR__ . '/build/2-icon' );
 	register_block_type( __DIR__ . '/build/3-edit' );
@@ -42,8 +42,12 @@ function formation_gut_formation_gut_block_init() {
 	register_block_type( __DIR__ . '/build/12-inspector' );
 	register_block_type( __DIR__ . '/build/13-destructuration' );
 	register_block_type( __DIR__ . '/build/14-components' );
-	register_block_type( __DIR__ . '/build/15-dynamic' );
-	register_block_type( __DIR__ . '/build/16-innerblocks' );
-	register_block_type( __DIR__ . '/build/17-hook' );
+
+	// 2è argument : callback pour le rendu PHP
+	register_block_type(
+		__DIR__ . '/build/15-dynamic',
+		[ 'render_callback' => 'capitainewp_dynamic_render' ]
+	);
 }
-add_action( 'init', 'formation_gut_formation_gut_block_init' );
+
+add_action( 'init', 'capitainewp_gut_bases_block_init' );
