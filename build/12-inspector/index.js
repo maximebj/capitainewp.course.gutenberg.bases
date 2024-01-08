@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/11-media/edit.js":
-/*!******************************!*\
-  !*** ./src/11-media/edit.js ***!
-  \******************************/
+/***/ "./src/12-inspector/edit.js":
+/*!**********************************!*\
+  !*** ./src/12-inspector/edit.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,7 +20,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/11-media/editor.scss");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/12-inspector/editor.scss");
+
 
 
 
@@ -28,73 +31,98 @@ __webpack_require__.r(__webpack_exports__);
 
 function Edit(props) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-
-  // Attribution des informations de l'image
-  const onSelectImage = picture => {
-    console.log(picture); // Afficher les informations récupérées de l'image
-    //console.log(picture.sizes) // Afficher les tailles d'image disponible pour ajuster les attributs plus bas si nécessaire
-
-    props.setAttributes({
-      pictureID: picture.id,
-      pictureURL: picture.sizes.full.url,
-      pictureAlt: picture.alt
-    });
-  };
-
-  // Effacement des données de l'image
-  const onRemoveImage = () => {
-    props.setAttributes({
-      pictureID: null,
-      pictureURL: null,
-      pictureAlt: null
-    });
-  };
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...blockProps
-  }, !props.attributes.pictureID ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    onSelect: onSelectImage,
-    allowedTypes: ['image'],
-    value: props.attributes.pictureID,
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Placeholder, {
-      icon: "images-alt",
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Photo', 'capitainewp-gut-bases'),
-      instructions: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a picture', 'capitainewp-gut-bases')
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      variant: "secondary" //isSecondary deprecated : https://github.com/WordPress/gutenberg/issues/2587
-      ,
-      isLarge: true,
-      onClick: open,
-      icon: "upload"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Import', 'capitainewp-gut-bases')))
-  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "capitaine-image-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: props.attributes.pictureURL,
-    alt: props.attributes.pictureAlt
-  }), props.isSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    className: "capitaine-remove-image",
-    onClick: onRemoveImage,
-    icon: "dismiss"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Remove picture', 'capitainewp-gut-bases'))));
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
+    value: props.attributes.alignment,
+    onChange: alignment => props.setAttributes({
+      alignment: alignment
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Chapter sign', 'capitainewp-gut-bases')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, ['#', 'n°', '§'].map(sign => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    isLarge: true,
+    variant: props.attributes.chapterSign == sign // isPrimary deprecated see : https://github.com/WordPress/gutenberg/commit/7ecbbe82f6d192cd30257966af74e59582193dd2
+    ,
+    onClick: () => props.setAttributes({
+      chapterSign: sign
+    })
+  }, sign)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Colors', 'capitainewp-gut-bases'),
+    colorSettings: [{
+      value: props.attributes.textColor,
+      onChange: textColor => props.setAttributes({
+        textColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title color', 'capitainewp-gut-bases')
+    }, {
+      value: props.attributes.backgroundColor,
+      onChange: backgroundColor => props.setAttributes({
+        backgroundColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background color', 'capitainewp-gut-bases')
+    }]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border', 'capitainewp-gut-bases')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Radius', 'capitainewp-gut-bases'),
+    checked: props.attributes.withRadius,
+    onChange: () => props.setAttributes({
+      withRadius: !props.attributes.withRadius
+    })
+  }), props.attributes.withRadius && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    value: props.attributes.radius,
+    onChange: radius => props.setAttributes({
+      radius
+    }),
+    min: 0,
+    max: 30,
+    beforeIcon: "arrow-down",
+    afterIcon: "arrow-up"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps,
+    style: {
+      borderRadius: props.attributes.withRadius ? props.attributes.radius : null,
+      backgroundColor: props.attributes.backgroundColor,
+      textAlign: props.attributes.alignment
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "first-line",
+    style: {
+      color: props.attributes.textColor
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, props.attributes.chapterSign), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "span",
+    placeholder: "1",
+    value: props.attributes.number,
+    className: "number",
+    onChange: number => props.setAttributes({
+      number
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "h2",
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Your title here', 'capitainewp-gut-bases'),
+    value: props.attributes.title,
+    className: "title",
+    onChange: title => props.setAttributes({
+      title
+    })
+  })));
 }
 
 /***/ }),
 
-/***/ "./src/11-media/index.js":
-/*!*******************************!*\
-  !*** ./src/11-media/index.js ***!
-  \*******************************/
+/***/ "./src/12-inspector/index.js":
+/*!***********************************!*\
+  !*** ./src/12-inspector/index.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/11-media/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/11-media/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/11-media/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/11-media/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/12-inspector/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/12-inspector/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/12-inspector/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/12-inspector/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -136,10 +164,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/11-media/save.js":
-/*!******************************!*\
-  !*** ./src/11-media/save.js ***!
-  \******************************/
+/***/ "./src/12-inspector/save.js":
+/*!**********************************!*\
+  !*** ./src/12-inspector/save.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -157,20 +185,39 @@ __webpack_require__.r(__webpack_exports__);
 
 function save(props) {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
-  return props.attributes.pictureID && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: props.attributes.pictureURL,
-    alt: props.attributes.pictureAlt
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps,
+    style: {
+      borderRadius: props.attributes.withRadius ? props.attributes.radius : null,
+      backgroundColor: props.attributes.backgroundColor,
+      textAlign: props.attributes.alignment
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "first-line",
+    style: {
+      color: props.attributes.textColor
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+    tagName: "span",
+    className: "sign",
+    value: props.attributes.chapterSign
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+    tagName: "span",
+    className: "number",
+    value: props.attributes.number
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+    tagName: "h2",
+    className: "title",
+    value: props.attributes.title
   }));
 }
 
 /***/ }),
 
-/***/ "./src/11-media/editor.scss":
-/*!**********************************!*\
-  !*** ./src/11-media/editor.scss ***!
-  \**********************************/
+/***/ "./src/12-inspector/editor.scss":
+/*!**************************************!*\
+  !*** ./src/12-inspector/editor.scss ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -179,10 +226,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/11-media/style.scss":
-/*!*********************************!*\
-  !*** ./src/11-media/style.scss ***!
-  \*********************************/
+/***/ "./src/12-inspector/style.scss":
+/*!*************************************!*\
+  !*** ./src/12-inspector/style.scss ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -231,6 +278,16 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -241,13 +298,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/11-media/block.json":
-/*!*********************************!*\
-  !*** ./src/11-media/block.json ***!
-  \*********************************/
+/***/ "./src/12-inspector/block.json":
+/*!*************************************!*\
+  !*** ./src/12-inspector/block.json ***!
+  \*************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"capitainewp/media","version":"1.0","title":"11. Import de média","icon":"camera","category":"text","description":"Un bloc avec le composant Media","supports":{"html":false},"attributes":{"pictureID":{"type":"number","default":null},"pictureURL":{"type":"string","source":"attribute","attribute":"src","selector":"img"},"pictureAlt":{"type":"string","source":"attribute","attribute":"alt","selector":"img"}},"textdomain":"capitainewp-gut-bases","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"capitainewp/inspector","version":"1.0","title":"12. Inspecteur","icon":"admin-settings","category":"text","description":"Un bloc avec des réglages dans l’inspecteur","supports":{"html":false},"attributes":{"number":{"type":"string","source":"html","selector":".number"},"title":{"type":"string","source":"html","selector":".title"},"chapterSign":{"type":"string","source":"text","selector":".sign","default":"#"},"alignment":{"type":"string"},"textColor":{"type":"string"},"backgroundColor":{"type":"string"},"withRadius":{"type":"boolean","default":false},"radius":{"type":"integer","default":8}},"textdomain":"capitainewp-gut-bases","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
@@ -361,8 +418,8 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"11-media/index": 0,
-/******/ 			"11-media/style-index": 0
+/******/ 			"12-inspector/index": 0,
+/******/ 			"12-inspector/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -412,7 +469,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["11-media/style-index"], () => (__webpack_require__("./src/11-media/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["12-inspector/style-index"], () => (__webpack_require__("./src/12-inspector/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

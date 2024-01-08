@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "capitainewp/inspector",
+  "version": "1.0",
+  "title": "12. Inspecteur",
+  "icon": "admin-settings",
+  "category": "text",
+  "description": "Un bloc avec des réglages dans l’inspecteur",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "number": {
+      "type": "string",
+      "source": "html",
+      "selector": ".number"
+    },
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": ".title"
+    },
+    "chapterSign": {
+      "type": "string",
+      "source": "text",
+      "selector": ".sign",
+      "default": "#"
+    },
+    "alignment": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "withRadius": {
+      "type": "boolean",
+      "default": false
+    },
+    "radius": {
+      "type": "integer",
+      "default": 8
+    }
+  },
+  "textdomain": "capitainewp-gut-bases",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
