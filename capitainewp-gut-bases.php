@@ -43,6 +43,7 @@ function formation_gut_formation_gut_block_init() {
 	register_block_type( __DIR__ . '/build/13-destructuration' );
 	register_block_type( __DIR__ . '/build/14-components' );
 	register_block_type( __DIR__ . '/build/15-dynamic' );
-	register_block_type( __DIR__ . '/build/15-hook' );
+	register_block_type( __DIR__ . '/build/16-innerblocks' );
+	register_block_type( __DIR__ . '/build/17-hook' );
 }
 add_action( 'init', 'formation_gut_formation_gut_block_init' );
