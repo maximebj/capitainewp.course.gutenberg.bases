@@ -10,8 +10,8 @@ import Block from './block'
 export default function Edit( props ) {
 	const blockProps = useBlockProps()
 
-	const { attributes, setAttributes} = props
-	const { chapterSign, alignment, textColor, backgroundColor, withRadius, radius } = attributes
+	const { attributes, className, setAttributes} = props
+	const { number, title, chapterSign, alignment, textColor, backgroundColor, withRadius, radius } = attributes
 
 	return (
 		<Fragment>

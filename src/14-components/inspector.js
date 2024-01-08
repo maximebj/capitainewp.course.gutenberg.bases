@@ -22,7 +22,7 @@ export default function Inspector( props ) {
 					{ ['#', 'n°', '§'].map( (sign) => (
 						<Button
 							isLarge
-							variant={ props.attributes.chapterSign == sign } // isPrimary deprecated see : https://github.com/WordPress/gutenberg/commit/7ecbbe82f6d192cd30257966af74e59582193dd2
+							variant={ chapterSign == sign }
 							onClick={ () => setAttributes( { chapterSign: sign } ) }
 						>
 							{ sign }

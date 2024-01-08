@@ -3,7 +3,7 @@ import { RichText } from '@wordpress/block-editor'
 
 export default function Block( props ) {
 
-	const { attributes: { title, number, alignment, chapterSign, textColor, backgroundColor, withRadius, radius }, setAttributes, blockProps } = props
+	const { attributes: { title, number, alignment, chapterSign, textColor, backgroundColor, withRadius, radius }, className, setAttributes, blockProps } = props
 
 	return (
 		<div { ...blockProps }
