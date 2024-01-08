@@ -5,6 +5,7 @@
 	"version": "1.0",
 	"title": "20. Bloc Plugin",
 	"category": "capitainewp",
+	"_comment": "warning throwed by this https://developer.wordpress.org/reference/hooks/block_categories_all/",
 	"icon": "admin-plugins",
 	"description": "Présentation d'une extension du répertoire de plugins WordPress.org.",
 	"attributes": {
