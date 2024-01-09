@@ -138,7 +138,7 @@ function capitainewp_post_render( $attributes )
 	// Démarrage du cache d'affichage php
 	ob_start();
 
-	// inclusion du template || affichage d'un bloc par défaut au FSE ? || ajouter templating dans le block ?
+	// inclusion du template
 	include 'templates/post.php';
 
 	// Récupération du HTML affiché via echo
@@ -187,7 +187,7 @@ function capitainewp_plugin_render( $attributes ) {
 	// Démarrage du cache d'affichage php
 	ob_start();
 
-	// inclusion du template || affichage d'un bloc par défaut au FSE ? || ajouter templating dans le block ?
+	// inclusion du template
 	include 'templates/plugin.php';
 
 	// Récupération du HTML affiché via echo
