@@ -40,7 +40,7 @@ export default function Edit( props ) {
 						{ ['#', 'n°', '§'].map( (sign) => (
 							<Button
 								isLarge
-								isPrimary={ chapterSign == sign }
+								variant={ chapterSign == sign } //isPrimary deprecated : https://github.com/WordPress/gutenberg/issues/2587
 								onClick={ () => setAttributes( { chapterSign: sign } ) }
 							>
 								{ sign }

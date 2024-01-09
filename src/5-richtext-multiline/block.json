@@ -1,8 +1,8 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "capitainewp/richtext-multiline",
-	"version": "1.0",
+	"version": "1.1",
 	"title": "5. Richtext et multiligne",
 	"icon": "edit",
 	"category": "text",

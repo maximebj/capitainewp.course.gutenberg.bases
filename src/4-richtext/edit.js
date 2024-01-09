@@ -9,6 +9,7 @@ export default function Edit( props ) {
 	// La fonction qui met à jour la valeur
 	const onChangeContent = content => {
 		props.setAttributes( { content: content } )
+		// ceci fonctionerait aussi grâce à ESNext ;) props.setAttributes( { content } )
 	}
 
 	return (

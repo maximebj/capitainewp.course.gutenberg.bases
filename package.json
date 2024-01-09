@@ -1,8 +1,8 @@
 {
-	"name": "capitainewp-gut-bases",
-	"version": "0.1.0",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"author": "The WordPress Contributors",
+	"name": "captaine-wp-gut-bases",
+	"version": "0.1.1",
+	"description": "A set of example blocks written with ESNext",
+	"author": "Capitaine WP",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -15,10 +15,9 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^22.2.1"
+		"@wordpress/scripts": "^26.19.0"
 	},
 	"dependencies": {
-		"save": "^2.5.0",
 		"throttle-debounce": "^5.0.0"
 	}
 }

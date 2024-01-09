@@ -2,8 +2,8 @@ import { __ } from '@wordpress/i18n'
 import {
 	useBlockProps,
 	RichText,
-	AlignmentToolbar, // On charge la Toolbar
-	BlockControls, // Et les options d'alignement supplémentaires
+	BlockControls, // On charge la Toolbar
+	AlignmentToolbar, // Et les options d'alignement supplémentaires
 } from '@wordpress/block-editor'
 import { Fragment } from '@wordpress/element'
 
@@ -25,7 +25,7 @@ export default function Edit( props ) {
 			<div { ...blockProps }>
 				<RichText
 					tagName="div"
-					multiline="p"
+					multiline="p" //deprecated since 6.1 but no warning in console like #5 block
 					placeholder={ __( 'Write your content here', 'capitainewp-gut-bases' ) }
 					value={ props.attributes.content }
 					className="content"

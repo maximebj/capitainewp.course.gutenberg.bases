@@ -1,10 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "capitainewp/plugin",
-	"version": "1.0",
+	"version": "1.1",
 	"title": "20. Bloc Plugin",
 	"category": "capitainewp",
+	"_comment": "warning throwed by this https://developer.wordpress.org/reference/hooks/block_categories_all/",
 	"icon": "admin-plugins",
 	"description": "Présentation d'une extension du répertoire de plugins WordPress.org.",
 	"attributes": {

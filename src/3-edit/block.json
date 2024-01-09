@@ -1,11 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "capitainewp/edit",
-	"version": "1.0",
+	"version": "1.1",
 	"title": "3. Bloc éditable",
 	"icon": "edit",
 	"category": "text",
+	"keywords": [ "Capitaine WP", "Gutenberg", "édition" ],
 	"description": "Un bloc avec un contenu éditable",
 	"supports": {
 		"html": false

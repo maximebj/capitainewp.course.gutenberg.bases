@@ -22,7 +22,7 @@ export default function Inspector( props ) {
 					{ ['#', 'n°', '§'].map( (sign) => (
 						<Button
 							isLarge
-							isPrimary={ chapterSign == sign }
+							variant={ chapterSign == sign }
 							onClick={ () => setAttributes( { chapterSign: sign } ) }
 						>
 							{ sign }

@@ -11,10 +11,11 @@ export default function Edit( props ) {
 	const onSelectImage = picture => {
 
 		console.log(picture) // Afficher les informations récupérées de l'image
+		//console.log(picture.sizes) // Afficher les tailles d'image disponible pour ajuster les attributs plus bas si nécessaire
 
 		props.setAttributes( {
 			pictureID: picture.id,
-			pictureURL: picture.url,
+			pictureURL: picture.sizes.full.url,
 			pictureAlt: picture.alt,
 		})
 	}
@@ -43,7 +44,7 @@ export default function Edit( props ) {
 								instructions={ __( 'Select a picture', 'capitainewp-gut-bases' ) }
 							>
 								<Button
-									isSecondary
+									variant='secondary' //isSecondary deprecated : https://github.com/WordPress/gutenberg/issues/2587
 									isLarge
 									onClick={ open }
 									icon="upload"

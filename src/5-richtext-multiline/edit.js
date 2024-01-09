@@ -10,7 +10,7 @@ export default function Edit( props ) {
 		<div { ...blockProps }>
 			<RichText
 				tagName="div"
-				multiline="p"
+				multiline="p" //deprecated since 6.1 -> innerBlocks ? hook on RichText ???
 				placeholder={ __( 'Write your content here', 'capitainewp-gut-bases' ) }
 				value={ props.attributes.content }
 				className="content"

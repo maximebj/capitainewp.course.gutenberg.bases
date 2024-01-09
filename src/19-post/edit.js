@@ -9,7 +9,7 @@ import './editor.scss'
 
 export default function Edit( props ) {
 	const { attributes, setAttributes } = props
-  const { postID } = attributes
+  	const { postID } = attributes
 
 	return (
 		<Fragment>

@@ -1,26 +1,33 @@
 <?php
 /**
  * Plugin Name:       Capitaine WP • Formation Gutenberg
- * Description:       Les blocs de la formation Gutenberg 2022 de Capitaine WP
+ * Description:       Les blocs de la formation Gutenberg 2024 de Capitaine WP
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           3.0
- * Author:            Maxime BJ • Capitaine WP
+ * Version:           3.1
+ * Author:            Maxime BJ • Capitaine WP - François de Cambourg • FinePress
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       capitainewp-gut-bases
  *
  * @package           create-block
+ * @package           @wordpress/scripts
+ * 
  */
 
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
- * Déclaration de nos blocs
+ * Registers the block using the metadata loaded from the `block.json` file.
+ * Behind the scenes, it registers also all assets so they can be enqueued
+ * through the block editor in the corresponding context.
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function capitainewp_gut_bases_block_init()
-{
+function capitainewp_gut_bases_block_init() {
 	register_block_type( __DIR__ . '/build/1-block' );
 	register_block_type( __DIR__ . '/build/2-icon' );
 	register_block_type( __DIR__ . '/build/3-edit' );
@@ -29,7 +36,7 @@ function capitainewp_gut_bases_block_init()
 	register_block_type( __DIR__ . '/build/6-richtext-toolbar' );
 	register_block_type( __DIR__ . '/build/7-richtext-alignment' );
 	register_block_type( __DIR__ . '/build/8-css' );
-	register_block_type( __DIR__ . '/build/9-toolbar-custom' );
+	register_block_type( __DIR__ . '/build/9-alert' );
 	register_block_type( __DIR__ . '/build/10-url' );
 	register_block_type( __DIR__ . '/build/11-media' );
 	register_block_type( __DIR__ . '/build/12-inspector' );
@@ -44,7 +51,7 @@ function capitainewp_gut_bases_block_init()
 
 	register_block_type( __DIR__ . '/build/16-innerblocks' );
 	register_block_type( __DIR__ . '/build/17-hooks' );
-	register_block_type( __DIR__ . '/build/18-parameters' );
+	//register_block_type( __DIR__ . '/build/18-parameters' ); //still relevant ??? Nothing in the lessons on this one 
 
 	// Ce bloc est également rendu en PHP pour le front
 	register_block_type(
@@ -57,7 +64,9 @@ function capitainewp_gut_bases_block_init()
 		__DIR__ . '/build/20-plugin',
 		[ 'render_callback' => 'capitainewp_plugin_render' ]
 	);
+
 }
+
 add_action( 'init', 'capitainewp_gut_bases_block_init' );
 
 
@@ -144,7 +153,6 @@ function capitainewp_post_render( $attributes )
 	return $markup;
 }
 
-
 /**
  * Rendu dynamique pour le bloc 20 : Plugin
  */
@@ -189,7 +197,6 @@ function capitainewp_plugin_render( $attributes ) {
 	return $markup;
 }
 
-
 /**
  * Requête Ajax pour chercher un plugin sur wp.org
  */
@@ -225,7 +232,6 @@ function capitainewp_search_plugins() {
 }
 add_action( 'wp_ajax_capitainewp_search_plugins', 'capitainewp_search_plugins' );
 
-
 /**
  * Requête Ajax pour récupérer les informations d'un plugin sur wp.org
  */
@@ -254,7 +260,6 @@ function capitainewp_get_plugin() {
 }
 add_action( 'wp_ajax_capitainewp_get_plugin', 'capitainewp_get_plugin' );
 
-
 /**
  * Préparer les données pour le plugin
  */
@@ -280,7 +285,6 @@ function capitainewp_prepare_plugins_data( $data ) {
 	];
 }
 
-
 /**
  * Récupérer l'image la plus appropriée en commençant par la version haute résolution si disponible
  */
@@ -293,7 +297,6 @@ function capitainewp_define_image( $icons ) {
 		return $icons['default'];
 	}
 }
-
 
 /**
  * Optimiser le libellé du nombre d'installations actives
@@ -338,7 +341,6 @@ function capitainewp_set_stars( $rating ) {
 
 	return $stars;
 }
-
 
 /**
  * Étoiles SVG pleines, semi-pleines et vides

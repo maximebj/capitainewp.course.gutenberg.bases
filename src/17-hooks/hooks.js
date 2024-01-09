@@ -35,7 +35,7 @@ function addAttributes( settings, name ) {
 const addAdvancedControls = createHigherOrderComponent( ( Block ) => {
   return ( props ) => {
 
-		const { name, attributes, setAttributes, isSelected } = props;
+	const { name, attributes, setAttributes, isSelected } = props;
     const { size } = attributes;
 
 		// Si ce n'est pas le bon bloc, on quitte
@@ -76,7 +76,7 @@ const addAdvancedControls = createHigherOrderComponent( ( Block ) => {
 const addCustomClassToBlock = createHigherOrderComponent( ( Block ) => {
   return ( props ) => {
 
-		const { name } = props;
+	const { name } = props;
     const { size } = props.attributes;
 
 		// Si ce n'est pas le bon bloc, on quitte

@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "capitainewp/dynamic",
-	"version": "1.0",
+	"version": "1.1",
 	"title": "15. Bloc dynamique",
 	"icon": "wordpress-alt",
 	"category": "text",
-	"description": "Un bloc avec un contenu éditable",
+	"description": "Un bloc avec un contenu dynamique",
 	"supports": {
 		"html": false
 	},
