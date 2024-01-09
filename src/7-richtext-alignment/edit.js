@@ -25,7 +25,7 @@ export default function Edit( props ) {
 			<div { ...blockProps }>
 				<RichText
 					tagName="div"
-					multiline="p"
+					multiline="p" //deprecated since 6.1 but no warning in console like #5 block
 					placeholder={ __( 'Write your content here', 'capitainewp-gut-bases' ) }
 					value={ props.attributes.content }
 					className="content"
