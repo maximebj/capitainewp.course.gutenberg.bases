@@ -20,6 +20,7 @@ export default function Edit( props ) {
 					/>
 
 					<URLInput
+						__nextHasNoMarginBottom //get rid of deprecation warning see : https://make.wordpress.org/core/2023/03/03/editor-components-updates-in-wordpress-6-2/
 						value={ props.attributes.url }
 						onChange={ (url, post) => props.setAttributes( { url, text: (post && post.title) || props.attributes.text  } ) }
 					/>
